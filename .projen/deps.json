@@ -21,7 +21,11 @@
     },
     {
       "name": "aws-cdk",
-      "version": "^2.1.0",
+      "version": "^2.18.0",
+      "type": "build"
+    },
+    {
+      "name": "copyfiles",
       "type": "build"
     },
     {
@@ -81,13 +85,30 @@
       "type": "build"
     },
     {
+      "name": "@aws-cdk/aws-apigatewayv2-alpha",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-apigatewayv2-integrations-alpha",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-solutions-constructs/aws-lambda-dynamodb",
+      "version": "2.0.0",
+      "type": "runtime"
+    },
+    {
       "name": "aws-cdk-lib",
-      "version": "^2.1.0",
+      "version": "^2.18.0",
       "type": "runtime"
     },
     {
       "name": "constructs",
       "version": "^10.0.5",
+      "type": "runtime"
+    },
+    {
+      "name": "dotenv",
       "type": "runtime"
     }
   ],
