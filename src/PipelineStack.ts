@@ -17,17 +17,17 @@ export class PipelineStack extends Stack {
     Tags.of(this).add('Project', Statics.projectName);
     this.branchName = props.branchName;
     const pipeline = this.pipeline();
-    pipeline.addStage(new ParameterStage(this, 'mijn-persoonsgegevens-parameters', { env: props.deployToEnvironment }));
-    pipeline.addStage(new PersoonsgegevensApiStage(this, 'mijn-persoonsgegevens-api', { env: props.deployToEnvironment, branch: this.branchName }));
+    pipeline.addStage(new ParameterStage(this, 'mijn-gegevens-parameters', { env: props.deployToEnvironment }));
+    pipeline.addStage(new PersoonsgegevensApiStage(this, 'mijn-gegevens-api', { env: props.deployToEnvironment, branch: this.branchName }));
   }
 
   pipeline(): pipelines.CodePipeline {
     const connectionArn = new CfnParameter(this, 'connectionArn');
-    const source = pipelines.CodePipelineSource.connection('GemeenteNijmegen/mijn-persoonsgegevens', this.branchName, {
+    const source = pipelines.CodePipelineSource.connection('GemeenteNijmegen/mijn-gegevens', this.branchName, {
       connectionArn: connectionArn.valueAsString,
     });
-    const pipeline = new pipelines.CodePipeline(this, `mijnpersoonsgegevens-${this.branchName}`, {
-      pipelineName: `mijnpersoonsgegevens-${this.branchName}`,
+    const pipeline = new pipelines.CodePipeline(this, `mijngegevens-${this.branchName}`, {
+      pipelineName: `mijngegevens-${this.branchName}`,
       dockerEnabledForSelfMutation: true,
       dockerEnabledForSynth: true,
       crossAccountKeys: true,
