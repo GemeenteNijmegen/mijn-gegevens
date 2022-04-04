@@ -1,6 +1,6 @@
 import { Stage, StageProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { PersoonsgegevensApiStack } from './PersoonsGegevensApiStack';
+import { PersoonsgegevensApiStack } from './PersoonsgegevensApiStack';
 
 export interface GegevensApiStageProps extends StageProps {
   branch: string;
