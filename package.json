@@ -2,6 +2,7 @@
   "name": "mijn-gegevens",
   "scripts": {
     "build": "npx projen build",
+    "bump": "npx projen bump",
     "bundle": "npx projen bundle",
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
@@ -17,11 +18,13 @@
     "post-upgrade": "npx projen post-upgrade",
     "postinstall": "npx projen postinstall",
     "pre-compile": "npx projen pre-compile",
+    "release:production": "npx projen release:production",
     "synth": "npx projen synth",
     "synth:silent": "npx projen synth:silent",
     "test": "npx projen test",
     "test:update": "npx projen test:update",
     "test:watch": "npx projen test:watch",
+    "unbump": "npx projen unbump",
     "upgrade": "npx projen upgrade",
     "watch": "npx projen watch",
     "projen": "npx projen"
@@ -31,7 +34,7 @@
     "@types/node": "^12",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk": "^2.18.0",
+    "aws-cdk": "2.18.0",
     "copyfiles": "^2.4.1",
     "esbuild": "^0.14.29",
     "eslint": "^8",
@@ -43,6 +46,7 @@
     "json-schema": "^0.4.0",
     "npm-check-updates": "^12",
     "projen": "^0.54.2",
+    "standard-version": "^9",
     "ts-jest": "^27.1.4",
     "ts-node": "^9",
     "typescript": "^4.6.3"
@@ -51,7 +55,7 @@
     "@aws-cdk/aws-apigatewayv2-alpha": "^2.18.0-alpha.0",
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.18.0-alpha.0",
     "@aws-solutions-constructs/aws-lambda-dynamodb": "2.0.0",
-    "aws-cdk-lib": "^2.18.0",
+    "aws-cdk-lib": "2.18.0",
     "constructs": "^10.0.5",
     "dotenv": "^16.0.0"
   },
