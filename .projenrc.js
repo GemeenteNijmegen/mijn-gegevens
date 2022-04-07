@@ -1,7 +1,10 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkTypeScriptApp({
   cdkVersion: '2.18.0',
-  defaultReleaseBranch: 'main',
+  cdkVersionPinning: true,
+  defaultReleaseBranch: 'production',
+  release: true,
+  majorVersion: 1,
   name: 'mijn-gegevens',
   /* Runtime dependencies of this module. */
   deps: [
@@ -13,6 +16,11 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   devDeps: [
     'copyfiles',
   ],
+  depsUpgradeOptions: {
+    workflowOptions: {
+      branches: ['acceptance'],
+    },
+  },
   mutableBuild: true,
   jestOptions: {
     jestConfig: {
