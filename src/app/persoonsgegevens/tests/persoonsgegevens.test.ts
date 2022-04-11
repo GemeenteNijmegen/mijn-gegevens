@@ -62,5 +62,5 @@ test('Shows overview page', async () => {
   const dynamoDBClient = new DynamoDBClient({ region: 'eu-west-1' });
   const result = await requestHandler('session=12345', client, dynamoDBClient);
   expect(result.body).toMatch('Mijn gegevens');
-  writeFile(path.join(__dirname, 'test.html'), result.body, () => {});
+  writeFile(path.join(__dirname, 'output', 'test.html'), result.body, () => {});
 });

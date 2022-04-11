@@ -34,6 +34,7 @@ jspm_packages/
 .vscode
 src/app/**/shared
 .DS_Store
+src/app/**/tests/output
 !/.projenrc.js
 /test-reports/
 junit.xml
