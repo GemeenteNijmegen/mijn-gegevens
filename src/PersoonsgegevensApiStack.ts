@@ -47,7 +47,7 @@ export class PersoonsgegevensApiStack extends Stack {
     const monitoringLambdaArn = SSM.StringParameter.valueForStringParameter(this, Statics.ssmMonitoringLambdaArn);
     const monitoringFunction = Function.fromFunctionAttributes(this, 'monitoring', {
       functionArn: monitoringLambdaArn,
-      sameEnvironment: true
+      sameEnvironment: true,
     });
 
     const gegevensFunction = new ApiFunction(this, 'persoonsgegevens-function', {
