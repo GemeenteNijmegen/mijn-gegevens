@@ -45,7 +45,10 @@ export class PersoonsgegevensApiStack extends Stack {
     const tlsRootCAParam = SSM.StringParameter.fromStringParameterName(this, 'tlsrootca', Statics.ssmMTLSRootCA);
 
     const monitoringLambdaArn = SSM.StringParameter.valueForStringParameter(this, Statics.ssmMonitoringLambdaArn);
-    const monitoringFunction = Function.fromFunctionArn(this, 'monitoring-function', monitoringLambdaArn);
+    const monitoringFunction = Function.fromFunctionAttributes(this, 'monitoring', {
+      functionArn: monitoringLambdaArn,
+      sameEnvironment: true
+    });
 
     const gegevensFunction = new ApiFunction(this, 'persoonsgegevens-function', {
       description: 'Persoonsgegevens-lambda voor de Mijn Nijmegen-applicatie.',
