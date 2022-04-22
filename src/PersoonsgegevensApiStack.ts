@@ -3,6 +3,7 @@ import { HttpRouteKey } from '@aws-cdk/aws-apigatewayv2-alpha';
 import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
 import { aws_secretsmanager, Stack, aws_ssm as SSM, aws_kms } from 'aws-cdk-lib';
 import { ITable, Table } from 'aws-cdk-lib/aws-dynamodb';
+import { Function } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import { ApiFunction } from './ApiFunction';
 import { Statics } from './statics';
@@ -43,6 +44,12 @@ export class PersoonsgegevensApiStack extends Stack {
     const tlskeyParam = SSM.StringParameter.fromStringParameterName(this, 'tlskey', Statics.ssmMTLSClientCert);
     const tlsRootCAParam = SSM.StringParameter.fromStringParameterName(this, 'tlsrootca', Statics.ssmMTLSRootCA);
 
+    const monitoringLambdaArn = SSM.StringParameter.valueForStringParameter(this, Statics.ssmMonitoringLambdaArn);
+    const monitoringFunction = Function.fromFunctionAttributes(this, 'monitoring', {
+      functionArn: monitoringLambdaArn,
+      sameEnvironment: true,
+    });
+
     const gegevensFunction = new ApiFunction(this, 'persoonsgegevens-function', {
       description: 'Persoonsgegevens-lambda voor de Mijn Nijmegen-applicatie.',
       codePath: 'app/persoonsgegevens',
@@ -54,6 +61,7 @@ export class PersoonsgegevensApiStack extends Stack {
         MTLS_ROOT_CA_NAME: Statics.ssmMTLSRootCA,
         BRP_API_URL: SSM.StringParameter.valueForStringParameter(this, Statics.ssmBrpApiEndpointUrl),
       },
+      monitoredBy: monitoringFunction,
     });
     secretMTLSPrivateKey.grantRead(gegevensFunction.lambda);
     tlskeyParam.grantRead(gegevensFunction.lambda);
