@@ -31,7 +31,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     },
   },
   scripts: {
-    'install:persoonsgegevens': 'copyfiles -f src/shared/*.js src/app/persoonsgegevens/shared && cd src/app/persoonsgegevens && npm install',
+    'install:persoonsgegevens': 'copyfiles -f src/shared/* src/app/persoonsgegevens/shared && cd src/app/persoonsgegevens && npm install',
     'postinstall': 'npm run install:persoonsgegevens',
   },
   eslintOptions: {
