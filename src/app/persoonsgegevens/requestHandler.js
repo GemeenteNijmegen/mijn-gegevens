@@ -33,8 +33,13 @@ exports.requestHandler = async (cookies, apiClient, dynamoDBClient) => {
     const data = brpData;
     data.volledigenaam = brpData?.Persoon?.Persoonsgegevens?.Naam ? brpData.Persoon.Persoonsgegevens.Naam : 'Onbekende gebruiker';
 
+    data.title = 'Persoonsgegevens';
+    data.shownav = true;
     // render page
-    const html = await render(data, __dirname + '/templates/persoonsgegevens.mustache');
+    const html = await render(data, __dirname + '/templates/persoonsgegevens.mustache', {
+        'header': __dirname + '/shared/header.mustache',
+        'footer': __dirname + '/shared/footer.mustache',
+    });
     response = {
         'statusCode': 200,
         'body': html,

@@ -142,7 +142,7 @@
       "name": "install:persoonsgegevens",
       "steps": [
         {
-          "exec": "copyfiles -f src/shared/*.js src/app/persoonsgegevens/shared && cd src/app/persoonsgegevens && npm install"
+          "exec": "copyfiles -f src/shared/* src/app/persoonsgegevens/shared && cd src/app/persoonsgegevens && npm install"
         }
       ]
     },
@@ -214,7 +214,7 @@
       "description": "Synthesizes your cdk app into cdk.out and suppresses the template in stdout (part of \"yarn build\")",
       "steps": [
         {
-          "exec": "cdk synth > /dev/null"
+          "exec": "cdk synth -q"
         }
       ]
     },

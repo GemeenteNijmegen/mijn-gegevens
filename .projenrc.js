@@ -1,6 +1,6 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkTypeScriptApp({
-  cdkVersion: '2.20.0',
+  cdkVersion: '2.21.1',
   cdkVersionPinning: true,
   defaultReleaseBranch: 'production',
   release: true,
@@ -31,7 +31,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     },
   },
   scripts: {
-    'install:persoonsgegevens': 'copyfiles -f src/shared/*.js src/app/persoonsgegevens/shared && cd src/app/persoonsgegevens && npm install',
+    'install:persoonsgegevens': 'copyfiles -f src/shared/* src/app/persoonsgegevens/shared && cd src/app/persoonsgegevens && npm install',
     'postinstall': 'npm run install:persoonsgegevens',
   },
   eslintOptions: {
