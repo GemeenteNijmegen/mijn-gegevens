@@ -7,6 +7,7 @@
             <div class="col-12">
                 <h1>Mijn gegevens</h1>
                 <p class="lead">Hier vindt u een overzicht van uw persoons- en adresgegevens.</p>
+                {{^error}}
                 <section>
                 <h2>Persoonsgegevens</h2>
                 <table class="responsive-table">
@@ -69,6 +70,11 @@
                     </tbody>
                 </table>
                 </section>
+                {{/error}}
+                {{#error}}
+                <h2>Er is iets misgegaan</h2>
+                <p>{{error}}</p>
+                {{/error}}
             </div>
         </div>
     </div>

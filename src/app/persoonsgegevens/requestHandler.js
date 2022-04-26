@@ -29,6 +29,7 @@ exports.requestHandler = async (cookies, apiClient, dynamoDBClient) => {
     const bsn = session.getValue('bsn');
     const brpApi = new BrpApi(apiClient);
     console.timeLog('request', 'Brp Api');
+
     const brpData = await brpApi.getBrpData(bsn);
     const data = brpData;
     data.volledigenaam = brpData?.Persoon?.Persoonsgegevens?.Naam ? brpData.Persoon.Persoonsgegevens.Naam : 'Onbekende gebruiker';
