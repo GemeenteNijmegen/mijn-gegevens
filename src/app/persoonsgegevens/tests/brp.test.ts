@@ -3,6 +3,12 @@ import { ApiClient } from '../ApiClient';
 import { BrpApi } from '../BrpApi';
 import { FileApiClient } from '../FileApiClient';
 
+if (process.env.VERBOSETESTS!='True') {
+  global.console.error = jest.fn();
+  global.console.time = jest.fn();
+  global.console.log = jest.fn();
+}
+
 
 async function getStringFromFilePath(filePath: string) {
   return new Promise((res, rej) => {
@@ -55,5 +61,5 @@ test('Api', async () => {
   const client = new ApiClient(cert, key, ca);
   const api = new BrpApi(client);
   const result = await api.getBrpData(12345678);
-  expect(result).toBe(false);
+  expect(result).toHaveProperty('error');
 });
