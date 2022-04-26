@@ -2,15 +2,15 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { DynamoDBClient, GetItemCommandOutput } from '@aws-sdk/client-dynamodb';
 import { SecretsManagerClient, GetSecretValueCommandOutput } from '@aws-sdk/client-secrets-manager';
-import { SSMClient, GetParameterCommandOutput } from "@aws-sdk/client-ssm";
+import { SSMClient, GetParameterCommandOutput } from '@aws-sdk/client-ssm';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 import { mockClient } from 'jest-aws-client-mock';
 import { ApiClient } from '../ApiClient';
 import { requestHandler } from '../requestHandler';
-import MockAdapter from 'axios-mock-adapter';
-import axios from 'axios';
 
 
-if(process.env.VERBOSETESTS!='True') {
+if (process.env.VERBOSETESTS!='True') {
   global.console.error = jest.fn();
   global.console.time = jest.fn();
   global.console.log = jest.fn();
@@ -28,20 +28,20 @@ beforeAll(() => {
 
   process.env.MTLS_PRIVATE_KEY_ARN = 'testarn';
 
-    const secretsOutput: GetSecretValueCommandOutput = {
-        $metadata: {},
-        SecretString: 'test'
-    };
-    secretsMock.mockImplementation(() => secretsOutput);
-    const ssmOutput: GetParameterCommandOutput = {
-        $metadata: {},
-        Parameter: {
-            Value: 'test'
-        },
-    };
+  const secretsOutput: GetSecretValueCommandOutput = {
+    $metadata: {},
+    SecretString: 'test',
+  };
+  secretsMock.mockImplementation(() => secretsOutput);
+  const ssmOutput: GetParameterCommandOutput = {
+    $metadata: {},
+    Parameter: {
+      Value: 'test',
+    },
+  };
 
-    secretsMock.mockImplementation(() => secretsOutput);
-    parameterStoreMock.mockImplementation(() => ssmOutput);
+  secretsMock.mockImplementation(() => secretsOutput);
+  parameterStoreMock.mockImplementation(() => ssmOutput);
 });
 
 
@@ -80,9 +80,9 @@ describe('Requests', () => {
     const file = 'brp-12345678.json';
     const filePath = path.join('responses', file);
     const returnData = await getStringFromFilePath(filePath)
-    .then((data: any) => { 
+      .then((data: any) => {
         return JSON.parse(data);
-    });
+      });
     axiosMock.onPost().reply(200, returnData);
 
     const client = new ApiClient();
@@ -124,7 +124,7 @@ describe('Requests', () => {
   });
 
 
-test('Show overview page', async () => {
+  test('Show overview page', async () => {
     const output: GetSecretValueCommandOutput = {
       $metadata: {},
       SecretString: 'ditiseennepgeheim',
@@ -133,24 +133,23 @@ test('Show overview page', async () => {
     const file = 'brp-12345678.json';
     const filePath = path.join('responses', file);
     const returnData = await getStringFromFilePath(filePath)
-    .then((data: any) => { 
+      .then((data: any) => {
         return JSON.parse(data);
-    });
+      });
     axiosMock.onPost().reply(200, returnData);
     const client = new ApiClient();
     const dynamoDBClient = new DynamoDBClient({ region: 'eu-west-1' });
     const result = await requestHandler('session=12345', client, dynamoDBClient);
     expect(result.body).toMatch('Mijn gegevens');
     fs.writeFile(path.join(__dirname, 'output', 'test.html'), result.body, () => {});
-  })
+  });
 });
 
 async function getStringFromFilePath(filePath: string) {
   return new Promise((res, rej) => {
-      fs.readFile(path.join(__dirname, filePath), (err, data) => {
-          if (err)
-              return rej(err);
-          return res(data.toString());
-      });
+    fs.readFile(path.join(__dirname, filePath), (err, data) => {
+      if (err) {return rej(err);}
+      return res(data.toString());
+    });
   });
 }

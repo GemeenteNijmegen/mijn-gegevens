@@ -3,7 +3,7 @@ import { ApiClient } from '../ApiClient';
 import { BrpApi } from '../BrpApi';
 import { FileApiClient } from '../FileApiClient';
 
-if(process.env.VERBOSETESTS!='True') {
+if (process.env.VERBOSETESTS!='True') {
   global.console.error = jest.fn();
   global.console.time = jest.fn();
   global.console.log = jest.fn();
