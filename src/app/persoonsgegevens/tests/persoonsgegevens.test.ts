@@ -7,7 +7,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { mockClient } from 'jest-aws-client-mock';
 import { ApiClient } from '../ApiClient';
-import { requestHandler } from '../requestHandler';
+import { persoonsgegevensRequestHandler } from '../persoonsgegevensRequestHandler';
 
 
 if (process.env.VERBOSETESTS!='True') {
@@ -87,7 +87,7 @@ describe('Requests', () => {
 
     const client = new ApiClient();
     const dynamoDBClient = new DynamoDBClient({});
-    const result = await requestHandler('session=12345', client, dynamoDBClient);
+    const result = await persoonsgegevensRequestHandler('session=12345', client, dynamoDBClient);
     expect(result.statusCode).toBe(200);
     fs.writeFile(path.join(__dirname, 'output', 'test-error.html'), result.body, () => {});
   });
@@ -103,7 +103,7 @@ describe('Requests', () => {
 
     const client = new ApiClient();
     const dynamoDBClient = new DynamoDBClient({});
-    const result = await requestHandler('session=12345', client, dynamoDBClient);
+    const result = await persoonsgegevensRequestHandler('session=12345', client, dynamoDBClient);
     expect(result.statusCode).toBe(200);
     fs.writeFile(path.join(__dirname, 'output', 'test-error.html'), result.body, () => {});
   });
@@ -118,7 +118,7 @@ describe('Requests', () => {
 
     const client = new ApiClient();
     const dynamoDBClient = new DynamoDBClient({});
-    const result = await requestHandler('session=12345', client, dynamoDBClient);
+    const result = await persoonsgegevensRequestHandler('session=12345', client, dynamoDBClient);
     expect(result.statusCode).toBe(200);
     fs.writeFile(path.join(__dirname, 'output', 'test-timeout.html'), result.body, () => {});
   });
@@ -139,7 +139,7 @@ describe('Requests', () => {
     axiosMock.onPost().reply(200, returnData);
     const client = new ApiClient();
     const dynamoDBClient = new DynamoDBClient({ region: 'eu-west-1' });
-    const result = await requestHandler('session=12345', client, dynamoDBClient);
+    const result = await persoonsgegevensRequestHandler('session=12345', client, dynamoDBClient);
     expect(result.body).toMatch('Mijn gegevens');
     fs.writeFile(path.join(__dirname, 'output', 'test.html'), result.body, () => {});
   });

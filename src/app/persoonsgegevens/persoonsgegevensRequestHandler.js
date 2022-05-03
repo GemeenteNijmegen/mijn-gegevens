@@ -13,7 +13,7 @@ function redirectResponse(location, code = 302) {
     }
 }
 
-exports.requestHandler = async (cookies, apiClient, dynamoDBClient) => {
+exports.persoonsgegevensRequestHandler = async (cookies, apiClient, dynamoDBClient) => {
     if(!cookies || !apiClient || !dynamoDBClient) { throw new Error('all handler params are required'); }
     console.time('request');
     console.timeLog('request', 'start request');
@@ -21,10 +21,17 @@ exports.requestHandler = async (cookies, apiClient, dynamoDBClient) => {
     let session = new Session(cookies, dynamoDBClient);
     await session.init();
     console.timeLog('request', 'init session');
-    if (session.isLoggedIn() !== true) {
-        return redirectResponse('/login');
+    if (session.isLoggedIn() == true) {
+        // Get API data
+        const response = await handleLoggedinRequest(session, apiClient);
+        console.timeEnd('request');
+        return response;
     }
-    // Get API data
+    console.timeEnd('request');
+    return redirectResponse('/login');
+}
+
+async function handleLoggedinRequest(session, apiClient) {
     console.timeLog('request', 'Api Client init');
     const bsn = session.getValue('bsn');
     const brpApi = new BrpApi(apiClient);
@@ -48,6 +55,6 @@ exports.requestHandler = async (cookies, apiClient, dynamoDBClient) => {
             'Content-type': 'text/html'
         }
     };
-    console.timeEnd('request');
     return response;
 }
+

@@ -1,6 +1,6 @@
 const { ApiClient } = require('./ApiClient');
 const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
-const { requestHandler } = require("./requestHandler");
+const { persoonsgegevensRequestHandler } = require("./persoonsgegevensRequestHandler");
 
 const dynamoDBClient = new DynamoDBClient();
 const apiClient = new ApiClient();
@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
     try {
         const params = parseEvent(event);
         await initPromise;
-        return await requestHandler(params.cookies, apiClient, dynamoDBClient);
+        return await persoonsgegevensRequestHandler(params.cookies, apiClient, dynamoDBClient);
     
     } catch (err) {
         console.debug(err);
