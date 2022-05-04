@@ -13,7 +13,7 @@ function redirectResponse(location, code = 302) {
     }
 }
 
-exports.requestHandler = async (cookies, apiClient, dynamoDBClient) => {
+exports.persoonsgegevensRequestHandler = async (cookies, apiClient, dynamoDBClient) => {
     if(!cookies || !apiClient || !dynamoDBClient) { throw new Error('all handler params are required'); }
     console.time('request');
     console.timeLog('request', 'start request');
