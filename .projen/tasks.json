@@ -161,7 +161,11 @@
     },
     "post-upgrade": {
       "name": "post-upgrade",
-      "description": "Runs after upgrading dependencies"
+      "steps": [
+        {
+          "exec": "cd src/app/persoonsgegevens && npx npm-check-updates --upgrade --target=minor"
+        }
+      ]
     },
     "postinstall": {
       "name": "postinstall",
@@ -275,19 +279,19 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='aws-cdk,@aws-solutions-constructs/aws-lambda-dynamodb,aws-cdk-lib'"
+          "exec": "npm-check-updates --dep dev --upgrade --target=minor"
         },
         {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='aws-cdk,@aws-solutions-constructs/aws-lambda-dynamodb,aws-cdk-lib'"
+          "exec": "npm-check-updates --dep optional --upgrade --target=minor"
         },
         {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='aws-cdk,@aws-solutions-constructs/aws-lambda-dynamodb,aws-cdk-lib'"
+          "exec": "npm-check-updates --dep peer --upgrade --target=minor"
         },
         {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='aws-cdk,@aws-solutions-constructs/aws-lambda-dynamodb,aws-cdk-lib'"
+          "exec": "npm-check-updates --dep prod --upgrade --target=minor"
         },
         {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='aws-cdk,@aws-solutions-constructs/aws-lambda-dynamodb,aws-cdk-lib'"
+          "exec": "npm-check-updates --dep bundle --upgrade --target=minor"
         },
         {
           "exec": "yarn install --check-files"

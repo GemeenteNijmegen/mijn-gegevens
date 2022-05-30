@@ -1,7 +1,6 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkTypeScriptApp({
   cdkVersion: '2.22.0',
-  cdkVersionPinning: true,
   defaultReleaseBranch: 'production',
   release: true,
   majorVersion: 1,
@@ -12,7 +11,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     'dotenv',
     '@aws-cdk/aws-apigatewayv2-alpha',
     '@aws-cdk/aws-apigatewayv2-integrations-alpha',
-    '@aws-solutions-constructs/aws-lambda-dynamodb@2.0.0',
+    '@aws-solutions-constructs/aws-lambda-dynamodb',
   ],
   devDeps: [
     'copyfiles',
@@ -33,6 +32,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   scripts: {
     'install:persoonsgegevens': 'copyfiles -f src/shared/* src/app/persoonsgegevens/shared && cd src/app/persoonsgegevens && npm install',
     'postinstall': 'npm run install:persoonsgegevens',
+    'post-upgrade': 'cd src/app/persoonsgegevens && npx npm-check-updates --upgrade --target=minor',
   },
   eslintOptions: {
     devdirs: ['src/app/persoonsgegevens/tests', '/test', '/build-tools'],
