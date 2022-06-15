@@ -7,11 +7,10 @@ class ApiClient {
     /**
      * Connects to API's. Use .requestData() to get the actual info
      * 
-     * @param {string} bsn BSN to request data for
      * @param {string|null} cert optional client cert, default is env variable MTLS_CLIENT_CERT
      * @param {string|null} key optional private key for client cert, default will get key from secret store
      * @param {string|null} ca optional root ca bundle to trust, default is env variable MTLS_ROOT_CA
-     */
+    */
     constructor(cert, key, ca) {
         this.privatekey = key ? key : false;
         this.cert = cert ? cert : false;
