@@ -17,6 +17,5 @@ test('StackHasLambdas', () => {
   const app = new App();
   const stack = new PersoonsgegevensApiStack(app, 'api');
   const template = Template.fromStack(stack);
-  console.log(template);
   template.resourceCountIs('AWS::Lambda::Function', 2); //Setting log retention creates a lambda
 });

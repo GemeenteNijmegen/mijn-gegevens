@@ -3,10 +3,10 @@ import * as path from 'path';
 import { DynamoDBClient, GetItemCommandOutput } from '@aws-sdk/client-dynamodb';
 import { SecretsManagerClient, GetSecretValueCommandOutput } from '@aws-sdk/client-secrets-manager';
 import { SSMClient, GetParameterCommandOutput } from '@aws-sdk/client-ssm';
+import { ApiClient } from '@gemeentenijmegen/apiclient';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { mockClient } from 'jest-aws-client-mock';
-import { ApiClient } from '../ApiClient';
 import { persoonsgegevensRequestHandler } from '../persoonsgegevensRequestHandler';
 
 
@@ -59,7 +59,7 @@ beforeEach(() => {
       data: {
         M: {
           loggedin: { BOOL: true },
-          bsn: { S: '12345678' },
+          bsn: { S: '999993653' },
         },
       },
     },
@@ -74,7 +74,7 @@ describe('Requests', () => {
       SecretString: 'ditiseennepgeheim',
     };
     secretsMock.mockImplementation(() => output);
-    const file = 'brp-12345678.json';
+    const file = 'brp-999993653.json';
     const filePath = path.join('responses', file);
     const returnData = await getStringFromFilePath(filePath)
       .then((data: any) => {
@@ -127,7 +127,7 @@ describe('Requests', () => {
       SecretString: 'ditiseennepgeheim',
     };
     secretsMock.mockImplementation(() => output);
-    const file = 'brp-12345678.json';
+    const file = 'brp-999993653.json';
     const filePath = path.join('responses', file);
     const returnData = await getStringFromFilePath(filePath)
       .then((data: any) => {
