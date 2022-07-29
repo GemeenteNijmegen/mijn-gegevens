@@ -52,7 +52,7 @@ Object {
     },
     \\"build\\": {
       \\"commands\\": [
-        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"94924b077697e9bbb165f7423b343bc7aedeaf9cc2ca1f9baceef58952498cc6:test-eu-west-1\\\\\\"\\"
+        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"1d6e876b4bfac5d6bd9cec9732ec025936075c40f565592b8872ea7e136b5707:test-eu-west-1\\\\\\"\\"
       ]
     }
   }
@@ -111,7 +111,7 @@ Object {
     },
     \\"build\\": {
       \\"commands\\": [
-        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"4cd567bf52e0f31674ae9e960efae8855b8b1249fa9997799ae47dc9f80e9ff8:test-eu-west-1\\\\\\"\\"
+        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"ae967c277459e8936ac565a71d34ea5dcff7b98e556466c36a4d6da023a2d9aa:test-eu-west-1\\\\\\"\\"
       ]
     }
   }
@@ -189,11 +189,9 @@ Object {
             Object {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Resource": Array [
-                Object {
-                  "Fn::Sub": "arn:\${AWS::Partition}:iam::test:role/cdk-hnb659fds-file-publishing-role-test-eu-west-1",
-                },
-              ],
+              "Resource": Object {
+                "Fn::Sub": "arn:\${AWS::Partition}:iam::test:role/cdk-hnb659fds-file-publishing-role-test-eu-west-1",
+              },
             },
             Object {
               "Action": Array [
