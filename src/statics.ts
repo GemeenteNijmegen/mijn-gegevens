@@ -8,6 +8,7 @@ export abstract class Statics {
   static readonly ssmSessionsTableArn: string = '/cdk/mijn-nijmegen/sessionstable-arn';
   static readonly ssmDataKeyArn: string = '/cdk/mijn-nijmegen/kms-datakey-arn';
   static readonly ssmMonitoringLambdaArn: string = '/cdk/mijn-nijmegen/monitoring-lambda-arn';
+  static readonly ssmReadonlyRoleArn: string = '/cdk/mijn-nijmegen/readonly-role-arn';
 
   /**
    * Certificate private key for mTLS
