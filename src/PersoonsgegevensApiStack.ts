@@ -44,7 +44,7 @@ export class PersoonsgegevensApiStack extends Stack {
     const tlskeyParam = SSM.StringParameter.fromStringParameterName(this, 'tlskey', Statics.ssmMTLSClientCert);
     const tlsRootCAParam = SSM.StringParameter.fromStringParameterName(this, 'tlsrootca', Statics.ssmMTLSRootCA);
 
-    const readOnlyRole = Role.fromRoleArn(this, 'readonly', SSM.StringParameter.valueForStringParameter(this, Statics.ssmReadonlyRoleArn));
+    const readOnlyRole = Role.fromRoleArn(this, 'readonly', SSM.StringParameter.valueForStringParameter(this, Statics.ssmReadOnlyRoleArn));
 
     const gegevensFunction = new ApiFunction(this, 'persoonsgegevens-function', {
       description: 'Persoonsgegevens-lambda voor de Mijn Nijmegen-applicatie.',
