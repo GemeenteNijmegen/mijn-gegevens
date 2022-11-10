@@ -1,6 +1,7 @@
 const { ApiClient } = require('@gemeentenijmegen/apiclient');
 const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
 const { persoonsgegevensRequestHandler } = require("./persoonsgegevensRequestHandler");
+const { Response } = require('@gemeentenijmegen/apigateway-http/lib/V2/Response');
 
 const dynamoDBClient = new DynamoDBClient();
 const apiClient = new ApiClient();
@@ -29,9 +30,6 @@ exports.handler = async (event, context) => {
     
     } catch (err) {
         console.debug(err);
-        response = {
-            'statusCode': 500
-        }
-        return response;
+        return Response.error(500);
     }
 };
