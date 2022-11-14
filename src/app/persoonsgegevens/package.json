@@ -11,6 +11,7 @@
     "@aws-sdk/client-secrets-manager": "3.199.0",
     "@aws-sdk/client-ssm": "3.199.0",
     "@gemeentenijmegen/apiclient": "0.0.0",
+    "@gemeentenijmegen/apigateway-http": "^0.0.3",
     "@gemeentenijmegen/session": "^0.0.5",
     "@gemeentenijmegen/utils": "0.0.0",
     "axios": "^0.27.2",
