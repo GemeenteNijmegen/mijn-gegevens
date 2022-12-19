@@ -30,11 +30,13 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
+src/app/**/shared
+src/app/**/tests/output
+test-reports/junit.xml
+test/__snapshots__/*
 .env
 .vscode
-src/app/**/shared
 .DS_Store
-src/app/**/tests/output
 !/.projenrc.js
 /test-reports/
 junit.xml
@@ -58,3 +60,5 @@ junit.xml
 /cdk.out/
 .cdk.staging/
 .parcel-cache/
+!/.github/workflows/emergency.yml
+!/.github/workflows/auto-merge.yml
