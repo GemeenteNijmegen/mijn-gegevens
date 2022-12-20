@@ -2,10 +2,8 @@ const { GemeenteNijmegenCdkApp } = require('@gemeentenijmegen/modules-projen');
 const project = new GemeenteNijmegenCdkApp({
   cdkVersion: '2.41.0',
   defaultReleaseBranch: 'production',
-  release: true,
   majorVersion: 1,
   name: 'mijn-gegevens',
-  license: 'EUPL-1.2',
   /* Runtime dependencies of this module. */
   deps: [
     '@gemeentenijmegen/modules-projen',
@@ -17,11 +15,6 @@ const project = new GemeenteNijmegenCdkApp({
   devDeps: [
     'copyfiles',
   ],
-  depsUpgradeOptions: {
-    workflowOptions: {
-      branches: ['acceptance'],
-    },
-  },
   mutableBuild: true,
   jestOptions: {
     jestConfig: {
