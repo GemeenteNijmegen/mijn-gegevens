@@ -45,7 +45,7 @@
     "jest-junit": "^13",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^16",
-    "projen": "^0.66.10",
+    "projen": "^0.66.11",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
@@ -55,7 +55,7 @@
     "@aws-cdk/aws-apigatewayv2-alpha": "^2.59.0-alpha.0",
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.59.0-alpha.0",
     "@aws-solutions-constructs/aws-lambda-dynamodb": "2.30.0",
-    "@gemeentenijmegen/modules-projen": "^0.0.11",
+    "@gemeentenijmegen/projen-project-type": "^1.2.0",
     "aws-cdk-lib": "^2.41.0",
     "constructs": "^10.0.5",
     "dotenv": "^16.0.3"

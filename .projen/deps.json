@@ -101,7 +101,7 @@
       "type": "runtime"
     },
     {
-      "name": "@gemeentenijmegen/modules-projen",
+      "name": "@gemeentenijmegen/projen-project-type",
       "type": "runtime"
     },
     {
