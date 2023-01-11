@@ -64,7 +64,7 @@
     },
     {
       "name": "npm-check-updates",
-      "version": "^15",
+      "version": "^16",
       "type": "build"
     },
     {
@@ -101,7 +101,7 @@
       "type": "runtime"
     },
     {
-      "name": "@gemeentenijmegen/modules-projen",
+      "name": "@gemeentenijmegen/projen-project-type",
       "type": "runtime"
     },
     {

@@ -1,4 +1,4 @@
-const { GemeenteNijmegenCdkApp } = require('@gemeentenijmegen/modules-projen');
+const { GemeenteNijmegenCdkApp } = require('@gemeentenijmegen/projen-project-type');
 const project = new GemeenteNijmegenCdkApp({
   cdkVersion: '2.41.0',
   defaultReleaseBranch: 'production',
@@ -6,7 +6,7 @@ const project = new GemeenteNijmegenCdkApp({
   name: 'mijn-gegevens',
   /* Runtime dependencies of this module. */
   deps: [
-    '@gemeentenijmegen/modules-projen',
+    '@gemeentenijmegen/projen-project-type',
     'dotenv',
     '@aws-cdk/aws-apigatewayv2-alpha',
     '@aws-cdk/aws-apigatewayv2-integrations-alpha',
