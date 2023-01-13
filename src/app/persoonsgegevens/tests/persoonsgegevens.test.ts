@@ -142,6 +142,18 @@ describe('Requests', () => {
   });
 });
 
+
+describe('Unexpected requests', () => {
+  test('No cookies set should redirect to login page', async() => {
+    const client = new ApiClient('test', 'test', 'test');
+    const dynamoDBClient = new DynamoDBClient({ region: 'eu-west-1' });
+
+    const result = await persoonsgegevensRequestHandler('', client, dynamoDBClient);
+    expect(result.statusCode).toBe(302);
+    expect(result.headers.Location).toMatch('/login');
+  });
+});
+
 async function getStringFromFilePath(filePath: string) {
   return new Promise((res, rej) => {
     fs.readFile(path.join(__dirname, filePath), (err, data) => {
