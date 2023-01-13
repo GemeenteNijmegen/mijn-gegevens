@@ -4,7 +4,7 @@ const { Session } = require('@gemeentenijmegen/session');
 const { Response } = require('@gemeentenijmegen/apigateway-http/lib/V2/Response');
 
 exports.persoonsgegevensRequestHandler = async (cookies, apiClient, dynamoDBClient) => {
-    if(!cookies || !apiClient || !dynamoDBClient) { throw new Error('all handler params are required'); }
+    if(!apiClient || !dynamoDBClient) { throw new Error('all handler params are required'); }
     console.time('request');
     console.timeLog('request', 'start request');
     console.timeLog('request', 'finished init');
