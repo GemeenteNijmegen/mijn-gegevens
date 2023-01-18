@@ -29,7 +29,7 @@ async function handleLoggedinRequest(session, apiClient) {
 
     const brpData = await brpApi.getBrpData(bsn);
     const data = brpData;
-    data.volledigenaam = brpData?.Persoon?.Persoonsgegevens?.Naam ? brpData.Persoon.Persoonsgegevens.Naam : 'Onbekende gebruiker';
+    data.volledigenaam = session.getValue('username');
 
     data.title = 'Persoonsgegevens';
     data.shownav = true;
