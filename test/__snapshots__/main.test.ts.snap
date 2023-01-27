@@ -52,7 +52,7 @@ Object {
     },
     \\"build\\": {
       \\"commands\\": [
-        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"57ec3d433625b1928ce41aaaf8b36378884d56d397c4e270a8d38957ebdb7467:test-eu-west-1\\\\\\"\\"
+        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"f5609609d9de720807f75c24e428401693d75f697c9e599da81802a048422a57:test-eu-west-1\\\\\\"\\"
       ]
     }
   }
@@ -111,7 +111,7 @@ Object {
     },
     \\"build\\": {
       \\"commands\\": [
-        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"eb5b005c858404ea0c8f68098ed5dcdf5340e02461f149751d10f59c210d5ef8:test-eu-west-1\\\\\\"\\"
+        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"e45ee2082d227db1b6f0292696ce5ce2b061c105d15efb341925ca040d1feb68:test-eu-west-1\\\\\\"\\"
       ]
     }
   }
