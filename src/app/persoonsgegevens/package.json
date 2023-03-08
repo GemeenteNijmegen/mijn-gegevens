@@ -7,19 +7,19 @@
     "test": "npx jest"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "3.252.0",
-    "@aws-sdk/client-secrets-manager": "3.252.0",
-    "@aws-sdk/client-ssm": "3.252.0",
-    "@gemeentenijmegen/apiclient": "0.0.0",
-    "@gemeentenijmegen/apigateway-http": "^0.0.3",
-    "@gemeentenijmegen/session": "^0.0.5",
-    "@gemeentenijmegen/utils": "0.0.0",
+    "@aws-sdk/client-dynamodb": "3.284.0",
+    "@aws-sdk/client-secrets-manager": "3.282.0",
+    "@aws-sdk/client-ssm": "3.282.0",
+    "@gemeentenijmegen/apiclient": "0.0.4",
+    "@gemeentenijmegen/apigateway-http": "^0.0.4",
+    "@gemeentenijmegen/session": "^0.0.6",
+    "@gemeentenijmegen/utils": "0.0.1",
     "axios": "^0.27.2",
     "cookie": "^0.5.0",
     "mustache": "^4.2.0"
   },
   "devDependencies": {
-    "@aws-sdk/types": "3.226.0",
+    "@aws-sdk/types": "3.272.0",
     "axios-mock-adapter": "^1.21.2",
     "dotenv": "^16.0.3",
     "jest-aws-client-mock": "0.0.26"
