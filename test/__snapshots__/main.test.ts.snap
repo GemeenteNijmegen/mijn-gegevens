@@ -111,7 +111,7 @@ Object {
     },
     \\"build\\": {
       \\"commands\\": [
-        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"5fa1330271b8967d9254ba2d4a07144f8acefe8b77e6d6bba38261373a50d5f8:test-eu-west-1\\\\\\"\\"
+        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"f5b6a6d08a8206e67d0b54e2a29abd7e0472d835abc71037de3a93545b5edacc:test-eu-west-1\\\\\\"\\"
       ]
     }
   }
