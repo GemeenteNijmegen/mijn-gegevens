@@ -30,7 +30,7 @@ Object {
         },
         "Environment": Object {
           "ComputeType": "BUILD_GENERAL1_SMALL",
-          "Image": "aws/codebuild/standard:5.0",
+          "Image": "aws/codebuild/standard:6.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
@@ -52,7 +52,7 @@ Object {
     },
     \\"build\\": {
       \\"commands\\": [
-        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"f00d376bc14946117ead5da77d117ed7522138cba0484b5f98f4fb33e7dd49ff:test-eu-west-1\\\\\\"\\"
+        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"e5a18d608fb9ac39810d453497c173acbeda961db839968ccde11f4f66fb83ba:test-eu-west-1\\\\\\"\\"
       ]
     }
   }
@@ -89,7 +89,7 @@ Object {
         },
         "Environment": Object {
           "ComputeType": "BUILD_GENERAL1_SMALL",
-          "Image": "aws/codebuild/standard:5.0",
+          "Image": "aws/codebuild/standard:6.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
@@ -111,7 +111,7 @@ Object {
     },
     \\"build\\": {
       \\"commands\\": [
-        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"e45ee2082d227db1b6f0292696ce5ce2b061c105d15efb341925ca040d1feb68:test-eu-west-1\\\\\\"\\"
+        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"f5b6a6d08a8206e67d0b54e2a29abd7e0472d835abc71037de3a93545b5edacc:test-eu-west-1\\\\\\"\\"
       ]
     }
   }
@@ -638,7 +638,7 @@ Object {
               "Value": "development",
             },
           ],
-          "Image": "aws/codebuild/standard:5.0",
+          "Image": "aws/codebuild/standard:6.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": true,
           "Type": "LINUX_CONTAINER",
@@ -932,7 +932,7 @@ Object {
                   "Version": "1",
                 },
                 "Configuration": Object {
-                  "EnvironmentVariables": "[{\\"name\\":\\"_PROJECT_CONFIG_HASH\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"408c2abba59dfe79726f604b5e4be80679cd98aa85c921835e5a1ab7ac11177f\\"}]",
+                  "EnvironmentVariables": "[{\\"name\\":\\"_PROJECT_CONFIG_HASH\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"e442fcab9e84117604c2162afeb4b582141cdd2849bcab542258ee2cca076bbd\\"}]",
                   "ProjectName": Object {
                     "Ref": "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectB9B618E0",
                   },
@@ -969,7 +969,7 @@ Object {
                   "Version": "1",
                 },
                 "Configuration": Object {
-                  "EnvironmentVariables": "[{\\"name\\":\\"_PROJECT_CONFIG_HASH\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"3da127aa189deb54d8c0980cc729eac900f60d30510349b54f3361e2131edba9\\"}]",
+                  "EnvironmentVariables": "[{\\"name\\":\\"_PROJECT_CONFIG_HASH\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"dc4c1bb479e53feb497ad01e46400d237abc6255c8789a774e5ff77e7b67a65e\\"}]",
                   "ProjectName": Object {
                     "Ref": "mijngegevensdevelopmentUpdatePipelineSelfMutation4B4A5B8B",
                   },
@@ -1503,7 +1503,7 @@ Object {
         },
         "Environment": Object {
           "ComputeType": "BUILD_GENERAL1_SMALL",
-          "Image": "aws/codebuild/standard:5.0",
+          "Image": "aws/codebuild/standard:6.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": true,
           "Type": "LINUX_CONTAINER",
