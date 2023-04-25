@@ -18,6 +18,7 @@ const project = new GemeenteNijmegenCdkApp({
     '@aws-cdk/aws-apigatewayv2-integrations-alpha',
     '@aws-solutions-constructs/aws-lambda-dynamodb',
     'mustache',
+    'axios',
   ],
   devDeps: [
     '@types/aws-lambda',
@@ -25,6 +26,7 @@ const project = new GemeenteNijmegenCdkApp({
     'copyfiles',
     '@glen/jest-raw-loader',
     'axios-mock-adapter',
+    '@aws-sdk/client-ssm',
   ],
   mutableBuild: true,
   jestOptions: {

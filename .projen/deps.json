@@ -1,6 +1,10 @@
 {
   "dependencies": [
     {
+      "name": "@aws-sdk/client-ssm",
+      "type": "build"
+    },
+    {
       "name": "@glen/jest-raw-loader",
       "type": "build"
     },
@@ -143,6 +147,10 @@
     {
       "name": "aws-cdk-lib",
       "version": "^2.41.0",
+      "type": "runtime"
+    },
+    {
+      "name": "axios",
       "type": "runtime"
     },
     {
