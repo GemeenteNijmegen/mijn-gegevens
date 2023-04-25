@@ -131,7 +131,6 @@ describe('Requests', () => {
         return JSON.parse(data);
       });
     axiosMock.onPost().reply(200, returnData);
-    const dynamoDBClient = new DynamoDBClient({ region: 'eu-west-1' });
     const result = await persoonsgegevensRequestHandler('session=12345', apiClient, dynamoDBClient);
     expect(result.body).toMatch('Mijn gegevens');
   });
