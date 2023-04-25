@@ -6,30 +6,50 @@ const project = new GemeenteNijmegenCdkApp({
   name: 'mijn-gegevens',
   /* Runtime dependencies of this module. */
   deps: [
+    '@aws-sdk/client-dynamodb',
+    '@aws-sdk/client-secrets-manager',
     '@gemeentenijmegen/projen-project-type',
+    '@gemeentenijmegen/apiclient',
+    '@gemeentenijmegen/apigateway-http',
+    '@gemeentenijmegen/session',
+    '@gemeentenijmegen/utils',
     'dotenv',
     '@aws-cdk/aws-apigatewayv2-alpha',
     '@aws-cdk/aws-apigatewayv2-integrations-alpha',
     '@aws-solutions-constructs/aws-lambda-dynamodb',
+    'mustache',
+    'axios',
   ],
   devDeps: [
+    '@types/aws-lambda',
+    'jest-aws-client-mock',
     'copyfiles',
+    '@glen/jest-raw-loader',
+    'axios-mock-adapter',
+    '@aws-sdk/client-ssm',
   ],
   mutableBuild: true,
   jestOptions: {
     jestConfig: {
       setupFiles: ['dotenv/config'],
-      testPathIgnorePatterns: ['/node_modules/', '/cdk.out'],
+      moduleFileExtensions: [
+        'js', 'json', 'jsx', 'ts', 'tsx', 'node', 'mustache',
+      ],
+      transform: {
+        '\\.[jt]sx?$': 'ts-jest',
+        '^.+\\.mustache$': '@glen/jest-raw-loader',
+      },
+      testPathIgnorePatterns: ['/node_modules/', '/cdk.out', '/test/playwright'],
       roots: ['src', 'test'],
     },
   },
-  scripts: {
-    'install:persoonsgegevens': 'copyfiles -f src/shared/* src/app/persoonsgegevens/shared && cd src/app/persoonsgegevens && npm install',
-    'postinstall': 'npm run install:persoonsgegevens',
-    'post-upgrade': 'cd src/app/persoonsgegevens && npx npm-check-updates --upgrade --target=minor',
-  },
   eslintOptions: {
     devdirs: ['src/app/persoonsgegevens/tests', '/test', '/build-tools'],
+  },
+  bundlerOptions: {
+    loaders: {
+      mustache: 'text',
+    },
   },
   gitignore: [
     '.env',

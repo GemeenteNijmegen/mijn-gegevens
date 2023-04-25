@@ -43,7 +43,30 @@
     },
     "bundle": {
       "name": "bundle",
-      "description": "Prepare assets"
+      "description": "Prepare assets",
+      "steps": [
+        {
+          "spawn": "bundle:app/persoonsgegevens/persoonsgegevens.lambda"
+        }
+      ]
+    },
+    "bundle:app/persoonsgegevens/persoonsgegevens.lambda": {
+      "name": "bundle:app/persoonsgegevens/persoonsgegevens.lambda",
+      "description": "Create a JavaScript bundle from src/app/persoonsgegevens/persoonsgegevens.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/app/persoonsgegevens/persoonsgegevens.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/app/persoonsgegevens/persoonsgegevens.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text"
+        }
+      ]
+    },
+    "bundle:app/persoonsgegevens/persoonsgegevens.lambda:watch": {
+      "name": "bundle:app/persoonsgegevens/persoonsgegevens.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src/app/persoonsgegevens/persoonsgegevens.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/app/persoonsgegevens/persoonsgegevens.lambda.ts --target=\"node18\" --platform=\"node\" --outfile=\"assets/app/persoonsgegevens/persoonsgegevens.lambda/index.js\" --tsconfig=\"tsconfig.dev.json\" --external:@aws-sdk/* --loader:.mustache=text --watch"
+        }
+      ]
     },
     "clobber": {
       "name": "clobber",
@@ -158,14 +181,6 @@
         }
       ]
     },
-    "install:persoonsgegevens": {
-      "name": "install:persoonsgegevens",
-      "steps": [
-        {
-          "exec": "copyfiles -f src/shared/* src/app/persoonsgegevens/shared && cd src/app/persoonsgegevens && npm install"
-        }
-      ]
-    },
     "lint": {
       "name": "lint",
       "steps": [
@@ -189,19 +204,7 @@
     },
     "post-upgrade": {
       "name": "post-upgrade",
-      "steps": [
-        {
-          "exec": "cd src/app/persoonsgegevens && npx npm-check-updates --upgrade --target=minor"
-        }
-      ]
-    },
-    "postinstall": {
-      "name": "postinstall",
-      "steps": [
-        {
-          "exec": "npm run install:persoonsgegevens"
-        }
-      ]
+      "description": "Runs after upgrading dependencies"
     },
     "pre-compile": {
       "name": "pre-compile",

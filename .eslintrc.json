@@ -147,7 +147,8 @@
         "devDependencies": [
           "**/src/app/persoonsgegevens/tests/**",
           "**//test/**",
-          "**//build-tools/**"
+          "**//build-tools/**",
+          "src/app/persoonsgegevens/persoonsgegevens.lambda.ts"
         ],
         "optionalDependencies": false,
         "peerDependencies": true

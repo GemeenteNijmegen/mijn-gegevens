@@ -22,6 +22,7 @@ beforeAll(() => {
 // This test doesn't run in CI by default, depends on unavailable secrets
 test('Api', async () => {
   if (!process.env.CERTPATH || !process.env.KEYPATH || !process.env.CAPATH) {
+    console.debug('Skipping live API test');
     return;
   }
   const cert = await getStringFromFilePath(process.env.CERTPATH);

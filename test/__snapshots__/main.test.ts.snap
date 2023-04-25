@@ -1,70 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snapshot 1`] = `
-Object {
-  "Parameters": Object {
-    "BootstrapVersion": Object {
+{
+  "Parameters": {
+    "BootstrapVersion": {
       "Default": "/cdk-bootstrap/hnb659fds/version",
       "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
       "Type": "AWS::SSM::Parameter::Value<String>",
     },
-    "connectionArn": Object {
+    "connectionArn": {
       "Type": "String",
     },
   },
-  "Resources": Object {
-    "mijngegevensdevelopmentAssetsFileAsset110399CBF": Object {
-      "Properties": Object {
-        "Artifacts": Object {
+  "Resources": {
+    "mijngegevensdevelopmentAssetsFileAsset110399CBF": {
+      "Properties": {
+        "Artifacts": {
           "Type": "CODEPIPELINE",
         },
-        "Cache": Object {
+        "Cache": {
           "Type": "NO_CACHE",
         },
         "Description": "Pipeline step test/Pipeline/Assets/FileAsset1",
-        "EncryptionKey": Object {
-          "Fn::GetAtt": Array [
+        "EncryptionKey": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
             "Arn",
           ],
         },
-        "Environment": Object {
+        "Environment": {
           "ComputeType": "BUILD_GENERAL1_SMALL",
           "Image": "aws/codebuild/standard:6.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
         },
-        "ServiceRole": Object {
-          "Fn::GetAtt": Array [
+        "ServiceRole": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentAssetsFileRoleF2B2BAB5",
             "Arn",
           ],
         },
-        "Source": Object {
+        "Source": {
           "BuildSpec": "{
-  \\"version\\": \\"0.2\\",
-  \\"phases\\": {
-    \\"install\\": {
-      \\"commands\\": [
-        \\"npm install -g cdk-assets@2\\"
+  "version": "0.2",
+  "phases": {
+    "install": {
+      "commands": [
+        "npm install -g cdk-assets@2"
       ]
     },
-    \\"build\\": {
-      \\"commands\\": [
-        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"e2e42e456479c5befbab23e40817b8697293561d6139fc2e1ccbe3d92daa03cf:test-eu-west-1\\\\\\"\\"
+    "build": {
+      "commands": [
+        "cdk-assets --path \\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\" --verbose publish \\"7df0e7f50acfa6fb317b5fc8ba7a552cb42e9b8cfc94b53ef1759aec3548bc44:test-eu-west-1\\""
       ]
     }
   }
 }",
           "Type": "CODEPIPELINE",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -72,58 +72,58 @@ Object {
       },
       "Type": "AWS::CodeBuild::Project",
     },
-    "mijngegevensdevelopmentAssetsFileAsset26EFE76EE": Object {
-      "Properties": Object {
-        "Artifacts": Object {
+    "mijngegevensdevelopmentAssetsFileAsset26EFE76EE": {
+      "Properties": {
+        "Artifacts": {
           "Type": "CODEPIPELINE",
         },
-        "Cache": Object {
+        "Cache": {
           "Type": "NO_CACHE",
         },
         "Description": "Pipeline step test/Pipeline/Assets/FileAsset2",
-        "EncryptionKey": Object {
-          "Fn::GetAtt": Array [
+        "EncryptionKey": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
             "Arn",
           ],
         },
-        "Environment": Object {
+        "Environment": {
           "ComputeType": "BUILD_GENERAL1_SMALL",
           "Image": "aws/codebuild/standard:6.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
         },
-        "ServiceRole": Object {
-          "Fn::GetAtt": Array [
+        "ServiceRole": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentAssetsFileRoleF2B2BAB5",
             "Arn",
           ],
         },
-        "Source": Object {
+        "Source": {
           "BuildSpec": "{
-  \\"version\\": \\"0.2\\",
-  \\"phases\\": {
-    \\"install\\": {
-      \\"commands\\": [
-        \\"npm install -g cdk-assets@2\\"
+  "version": "0.2",
+  "phases": {
+    "install": {
+      "commands": [
+        "npm install -g cdk-assets@2"
       ]
     },
-    \\"build\\": {
-      \\"commands\\": [
-        \\"cdk-assets --path \\\\\\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\\\\\" --verbose publish \\\\\\"f5b6a6d08a8206e67d0b54e2a29abd7e0472d835abc71037de3a93545b5edacc:test-eu-west-1\\\\\\"\\"
+    "build": {
+      "commands": [
+        "cdk-assets --path \\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\" --verbose publish \\"f5b6a6d08a8206e67d0b54e2a29abd7e0472d835abc71037de3a93545b5edacc:test-eu-west-1\\""
       ]
     }
   }
 }",
           "Type": "CODEPIPELINE",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -131,23 +131,23 @@ Object {
       },
       "Type": "AWS::CodeBuild::Project",
     },
-    "mijngegevensdevelopmentAssetsFileRoleDefaultPolicy204AE768": Object {
-      "Properties": Object {
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
-              "Action": Array [
+    "mijngegevensdevelopmentAssetsFileRoleDefaultPolicy204AE768": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
                 "logs:CreateLogGroup",
                 "logs:CreateLogStream",
                 "logs:PutLogEvents",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::Join": Array [
+              "Resource": {
+                "Fn::Join": [
                   "",
-                  Array [
+                  [
                     "arn:",
-                    Object {
+                    {
                       "Ref": "AWS::Partition",
                     },
                     ":logs:eu-west-1:test:log-group:/aws/codebuild/*",
@@ -155,8 +155,8 @@ Object {
                 ],
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "codebuild:CreateReportGroup",
                 "codebuild:CreateReport",
                 "codebuild:UpdateReport",
@@ -164,12 +164,12 @@ Object {
                 "codebuild:BatchPutCodeCoverages",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::Join": Array [
+              "Resource": {
+                "Fn::Join": [
                   "",
-                  Array [
+                  [
                     "arn:",
-                    Object {
+                    {
                       "Ref": "AWS::Partition",
                     },
                     ":codebuild:eu-west-1:test:report-group/*",
@@ -177,8 +177,8 @@ Object {
                 ],
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "codebuild:BatchGetBuilds",
                 "codebuild:StartBuild",
                 "codebuild:StopBuild",
@@ -186,33 +186,33 @@ Object {
               "Effect": "Allow",
               "Resource": "*",
             },
-            Object {
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Resource": Object {
+              "Resource": {
                 "Fn::Sub": "arn:\${AWS::Partition}:iam::test:role/cdk-hnb659fds-file-publishing-role-test-eu-west-1",
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "s3:GetObject*",
                 "s3:GetBucket*",
                 "s3:List*",
               ],
               "Effect": "Allow",
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                     "Arn",
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
+                    [
+                      {
+                        "Fn::GetAtt": [
                           "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                           "Arn",
                         ],
@@ -223,14 +223,14 @@ Object {
                 },
               ],
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "kms:Decrypt",
                 "kms:DescribeKey",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
                   "Arn",
                 ],
@@ -240,35 +240,35 @@ Object {
           "Version": "2012-10-17",
         },
         "PolicyName": "mijngegevensdevelopmentAssetsFileRoleDefaultPolicy204AE768",
-        "Roles": Array [
-          Object {
+        "Roles": [
+          {
             "Ref": "mijngegevensdevelopmentAssetsFileRoleF2B2BAB5",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
     },
-    "mijngegevensdevelopmentAssetsFileRoleF2B2BAB5": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "mijngegevensdevelopmentAssetsFileRoleF2B2BAB5": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "codebuild.amazonaws.com",
               },
             },
-            Object {
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
-                "AWS": Object {
-                  "Fn::Join": Array [
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:root",
@@ -280,12 +280,12 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -293,61 +293,61 @@ Object {
       },
       "Type": "AWS::IAM::Role",
     },
-    "mijngegevensdevelopmentCodeBuildActionRoleDefaultPolicyFE216A74": Object {
-      "Properties": Object {
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
-              "Action": Array [
+    "mijngegevensdevelopmentCodeBuildActionRoleDefaultPolicyFE216A74": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
                 "codebuild:BatchGetBuilds",
                 "codebuild:StartBuild",
                 "codebuild:StopBuild",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectB9B618E0",
                   "Arn",
                 ],
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "codebuild:BatchGetBuilds",
                 "codebuild:StartBuild",
                 "codebuild:StopBuild",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentUpdatePipelineSelfMutation4B4A5B8B",
                   "Arn",
                 ],
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "codebuild:BatchGetBuilds",
                 "codebuild:StartBuild",
                 "codebuild:StopBuild",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentAssetsFileAsset110399CBF",
                   "Arn",
                 ],
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "codebuild:BatchGetBuilds",
                 "codebuild:StartBuild",
                 "codebuild:StopBuild",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentAssetsFileAsset26EFE76EE",
                   "Arn",
                 ],
@@ -357,33 +357,33 @@ Object {
           "Version": "2012-10-17",
         },
         "PolicyName": "mijngegevensdevelopmentCodeBuildActionRoleDefaultPolicyFE216A74",
-        "Roles": Array [
-          Object {
+        "Roles": [
+          {
             "Ref": "mijngegevensdevelopmentCodeBuildActionRoleE2A058AD",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
     },
-    "mijngegevensdevelopmentCodeBuildActionRoleE2A058AD": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "mijngegevensdevelopmentCodeBuildActionRoleE2A058AD": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
-              "Condition": Object {
-                "Bool": Object {
+              "Condition": {
+                "Bool": {
                   "aws:ViaAWSService": "codepipeline.amazonaws.com",
                 },
               },
               "Effect": "Allow",
-              "Principal": Object {
-                "AWS": Object {
-                  "Fn::Join": Array [
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:root",
@@ -395,12 +395,12 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -408,15 +408,15 @@ Object {
       },
       "Type": "AWS::IAM::Role",
     },
-    "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285": Object {
+    "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285": {
       "DeletionPolicy": "Retain",
-      "Properties": Object {
-        "BucketEncryption": Object {
-          "ServerSideEncryptionConfiguration": Array [
-            Object {
-              "ServerSideEncryptionByDefault": Object {
-                "KMSMasterKeyID": Object {
-                  "Fn::GetAtt": Array [
+      "Properties": {
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "KMSMasterKeyID": {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
                     "Arn",
                   ],
@@ -426,18 +426,18 @@ Object {
             },
           ],
         },
-        "PublicAccessBlockConfiguration": Object {
+        "PublicAccessBlockConfiguration": {
           "BlockPublicAcls": true,
           "BlockPublicPolicy": true,
           "IgnorePublicAcls": true,
           "RestrictPublicBuckets": true,
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -446,12 +446,12 @@ Object {
       "Type": "AWS::S3::Bucket",
       "UpdateReplacePolicy": "Retain",
     },
-    "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyAliasD4051EEA": Object {
+    "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyAliasD4051EEA": {
       "DeletionPolicy": "Delete",
-      "Properties": Object {
+      "Properties": {
         "AliasName": "alias/codepipeline-testmijngegevensdevelopmentpipeline5a1886ca",
-        "TargetKeyId": Object {
-          "Fn::GetAtt": Array [
+        "TargetKeyId": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
             "Arn",
           ],
@@ -460,21 +460,21 @@ Object {
       "Type": "AWS::KMS::Alias",
       "UpdateReplacePolicy": "Delete",
     },
-    "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393": Object {
+    "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393": {
       "DeletionPolicy": "Delete",
-      "Properties": Object {
-        "KeyPolicy": Object {
-          "Statement": Array [
-            Object {
+      "Properties": {
+        "KeyPolicy": {
+          "Statement": [
+            {
               "Action": "kms:*",
               "Effect": "Allow",
-              "Principal": Object {
-                "AWS": Object {
-                  "Fn::Join": Array [
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:root",
@@ -484,19 +484,19 @@ Object {
               },
               "Resource": "*",
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "kms:Decrypt",
                 "kms:DescribeKey",
               ],
               "Effect": "Allow",
-              "Principal": Object {
-                "AWS": Object {
-                  "Fn::Join": Array [
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:role/cdk-hnb659fds-deploy-role-test-eu-west-1",
@@ -509,12 +509,12 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -523,37 +523,37 @@ Object {
       "Type": "AWS::KMS::Key",
       "UpdateReplacePolicy": "Delete",
     },
-    "mijngegevensdevelopmentPipelineArtifactsBucketPolicyFD0255E6": Object {
-      "Properties": Object {
-        "Bucket": Object {
+    "mijngegevensdevelopmentPipelineArtifactsBucketPolicyFD0255E6": {
+      "Properties": {
+        "Bucket": {
           "Ref": "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
         },
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
+        "PolicyDocument": {
+          "Statement": [
+            {
               "Action": "s3:*",
-              "Condition": Object {
-                "Bool": Object {
+              "Condition": {
+                "Bool": {
                   "aws:SecureTransport": "false",
                 },
               },
               "Effect": "Deny",
-              "Principal": Object {
+              "Principal": {
                 "AWS": "*",
               },
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                     "Arn",
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
+                    [
+                      {
+                        "Fn::GetAtt": [
                           "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                           "Arn",
                         ],
@@ -564,20 +564,20 @@ Object {
                 },
               ],
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "s3:GetObject*",
                 "s3:GetBucket*",
                 "s3:List*",
               ],
               "Effect": "Allow",
-              "Principal": Object {
-                "AWS": Object {
-                  "Fn::Join": Array [
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:role/cdk-hnb659fds-deploy-role-test-eu-west-1",
@@ -585,19 +585,19 @@ Object {
                   ],
                 },
               },
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                     "Arn",
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
+                    [
+                      {
+                        "Fn::GetAtt": [
                           "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                           "Arn",
                         ],
@@ -614,25 +614,25 @@ Object {
       },
       "Type": "AWS::S3::BucketPolicy",
     },
-    "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectB9B618E0": Object {
-      "Properties": Object {
-        "Artifacts": Object {
+    "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectB9B618E0": {
+      "Properties": {
+        "Artifacts": {
           "Type": "CODEPIPELINE",
         },
-        "Cache": Object {
+        "Cache": {
           "Type": "NO_CACHE",
         },
         "Description": "Pipeline step test/Pipeline/Build/Synth",
-        "EncryptionKey": Object {
-          "Fn::GetAtt": Array [
+        "EncryptionKey": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
             "Arn",
           ],
         },
-        "Environment": Object {
+        "Environment": {
           "ComputeType": "BUILD_GENERAL1_SMALL",
-          "EnvironmentVariables": Array [
-            Object {
+          "EnvironmentVariables": [
+            {
               "Name": "BRANCH_NAME",
               "Type": "PLAINTEXT",
               "Value": "development",
@@ -643,37 +643,37 @@ Object {
           "PrivilegedMode": true,
           "Type": "LINUX_CONTAINER",
         },
-        "ServiceRole": Object {
-          "Fn::GetAtt": Array [
+        "ServiceRole": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectRole23DB7082",
             "Arn",
           ],
         },
-        "Source": Object {
+        "Source": {
           "BuildSpec": "{
-  \\"version\\": \\"0.2\\",
-  \\"phases\\": {
-    \\"build\\": {
-      \\"commands\\": [
-        \\"yarn install --frozen-lockfile\\",
-        \\"npx projen build\\",
-        \\"npx projen synth\\"
+  "version": "0.2",
+  "phases": {
+    "build": {
+      "commands": [
+        "yarn install --frozen-lockfile",
+        "npx projen build",
+        "npx projen synth"
       ]
     }
   },
-  \\"artifacts\\": {
-    \\"base-directory\\": \\"cdk.out\\",
-    \\"files\\": \\"**/*\\"
+  "artifacts": {
+    "base-directory": "cdk.out",
+    "files": "**/*"
   }
 }",
           "Type": "CODEPIPELINE",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -681,26 +681,26 @@ Object {
       },
       "Type": "AWS::CodeBuild::Project",
     },
-    "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectRole23DB7082": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectRole23DB7082": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "codebuild.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -708,43 +708,43 @@ Object {
       },
       "Type": "AWS::IAM::Role",
     },
-    "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectRoleDefaultPolicyB4066F05": Object {
-      "Properties": Object {
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
-              "Action": Array [
+    "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectRoleDefaultPolicyB4066F05": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
                 "logs:CreateLogGroup",
                 "logs:CreateLogStream",
                 "logs:PutLogEvents",
               ],
               "Effect": "Allow",
-              "Resource": Array [
-                Object {
-                  "Fn::Join": Array [
+              "Resource": [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":logs:eu-west-1:test:log-group:/aws/codebuild/",
-                      Object {
+                      {
                         "Ref": "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectB9B618E0",
                       },
                     ],
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":logs:eu-west-1:test:log-group:/aws/codebuild/",
-                      Object {
+                      {
                         "Ref": "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectB9B618E0",
                       },
                       ":*",
@@ -753,8 +753,8 @@ Object {
                 },
               ],
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "codebuild:CreateReportGroup",
                 "codebuild:CreateReport",
                 "codebuild:UpdateReport",
@@ -762,16 +762,16 @@ Object {
                 "codebuild:BatchPutCodeCoverages",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::Join": Array [
+              "Resource": {
+                "Fn::Join": [
                   "",
-                  Array [
+                  [
                     "arn:",
-                    Object {
+                    {
                       "Ref": "AWS::Partition",
                     },
                     ":codebuild:eu-west-1:test:report-group/",
-                    Object {
+                    {
                       "Ref": "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectB9B618E0",
                     },
                     "-*",
@@ -779,8 +779,8 @@ Object {
                 ],
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "s3:GetObject*",
                 "s3:GetBucket*",
                 "s3:List*",
@@ -793,19 +793,19 @@ Object {
                 "s3:Abort*",
               ],
               "Effect": "Allow",
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                     "Arn",
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
+                    [
+                      {
+                        "Fn::GetAtt": [
                           "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                           "Arn",
                         ],
@@ -816,8 +816,8 @@ Object {
                 },
               ],
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "kms:Decrypt",
                 "kms:DescribeKey",
                 "kms:Encrypt",
@@ -825,23 +825,23 @@ Object {
                 "kms:GenerateDataKey*",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
                   "Arn",
                 ],
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "kms:Decrypt",
                 "kms:Encrypt",
                 "kms:ReEncrypt*",
                 "kms:GenerateDataKey*",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
                   "Arn",
                 ],
@@ -851,68 +851,68 @@ Object {
           "Version": "2012-10-17",
         },
         "PolicyName": "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectRoleDefaultPolicyB4066F05",
-        "Roles": Array [
-          Object {
+        "Roles": [
+          {
             "Ref": "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectRole23DB7082",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
     },
-    "mijngegevensdevelopmentPipelineF69DB8F0": Object {
-      "DependsOn": Array [
+    "mijngegevensdevelopmentPipelineF69DB8F0": {
+      "DependsOn": [
         "mijngegevensdevelopmentPipelineRoleDefaultPolicy1ED3B604",
         "mijngegevensdevelopmentPipelineRole52822A5B",
       ],
-      "Properties": Object {
-        "ArtifactStore": Object {
-          "EncryptionKey": Object {
-            "Id": Object {
-              "Fn::GetAtt": Array [
+      "Properties": {
+        "ArtifactStore": {
+          "EncryptionKey": {
+            "Id": {
+              "Fn::GetAtt": [
                 "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
                 "Arn",
               ],
             },
             "Type": "KMS",
           },
-          "Location": Object {
+          "Location": {
             "Ref": "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
           },
           "Type": "S3",
         },
         "Name": "mijngegevens-development",
         "RestartExecutionOnUpdate": true,
-        "RoleArn": Object {
-          "Fn::GetAtt": Array [
+        "RoleArn": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentPipelineRole52822A5B",
             "Arn",
           ],
         },
-        "Stages": Array [
-          Object {
-            "Actions": Array [
-              Object {
-                "ActionTypeId": Object {
+        "Stages": [
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
                   "Category": "Source",
                   "Owner": "AWS",
                   "Provider": "CodeStarSourceConnection",
                   "Version": "1",
                 },
-                "Configuration": Object {
+                "Configuration": {
                   "BranchName": "development",
-                  "ConnectionArn": Object {
+                  "ConnectionArn": {
                     "Ref": "connectionArn",
                   },
                   "FullRepositoryId": "GemeenteNijmegen/mijn-gegevens",
                 },
                 "Name": "GemeenteNijmegen_mijn-gegevens",
-                "OutputArtifacts": Array [
-                  Object {
+                "OutputArtifacts": [
+                  {
                     "Name": "GemeenteNijmegen_mijn_gegevens_Source",
                   },
                 ],
-                "RoleArn": Object {
-                  "Fn::GetAtt": Array [
+                "RoleArn": {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentPipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRole8FCFD73F",
                     "Arn",
                   ],
@@ -922,34 +922,34 @@ Object {
             ],
             "Name": "Source",
           },
-          Object {
-            "Actions": Array [
-              Object {
-                "ActionTypeId": Object {
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
                   "Category": "Build",
                   "Owner": "AWS",
                   "Provider": "CodeBuild",
                   "Version": "1",
                 },
-                "Configuration": Object {
-                  "EnvironmentVariables": "[{\\"name\\":\\"_PROJECT_CONFIG_HASH\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"e442fcab9e84117604c2162afeb4b582141cdd2849bcab542258ee2cca076bbd\\"}]",
-                  "ProjectName": Object {
+                "Configuration": {
+                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"e442fcab9e84117604c2162afeb4b582141cdd2849bcab542258ee2cca076bbd"}]",
+                  "ProjectName": {
                     "Ref": "mijngegevensdevelopmentPipelineBuildSynthCdkBuildProjectB9B618E0",
                   },
                 },
-                "InputArtifacts": Array [
-                  Object {
+                "InputArtifacts": [
+                  {
                     "Name": "GemeenteNijmegen_mijn_gegevens_Source",
                   },
                 ],
                 "Name": "Synth",
-                "OutputArtifacts": Array [
-                  Object {
+                "OutputArtifacts": [
+                  {
                     "Name": "Synth_Output",
                   },
                 ],
-                "RoleArn": Object {
-                  "Fn::GetAtt": Array [
+                "RoleArn": {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentCodeBuildActionRoleE2A058AD",
                     "Arn",
                   ],
@@ -959,29 +959,29 @@ Object {
             ],
             "Name": "Build",
           },
-          Object {
-            "Actions": Array [
-              Object {
-                "ActionTypeId": Object {
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
                   "Category": "Build",
                   "Owner": "AWS",
                   "Provider": "CodeBuild",
                   "Version": "1",
                 },
-                "Configuration": Object {
-                  "EnvironmentVariables": "[{\\"name\\":\\"_PROJECT_CONFIG_HASH\\",\\"type\\":\\"PLAINTEXT\\",\\"value\\":\\"dc4c1bb479e53feb497ad01e46400d237abc6255c8789a774e5ff77e7b67a65e\\"}]",
-                  "ProjectName": Object {
+                "Configuration": {
+                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"dc4c1bb479e53feb497ad01e46400d237abc6255c8789a774e5ff77e7b67a65e"}]",
+                  "ProjectName": {
                     "Ref": "mijngegevensdevelopmentUpdatePipelineSelfMutation4B4A5B8B",
                   },
                 },
-                "InputArtifacts": Array [
-                  Object {
+                "InputArtifacts": [
+                  {
                     "Name": "Synth_Output",
                   },
                 ],
                 "Name": "SelfMutate",
-                "RoleArn": Object {
-                  "Fn::GetAtt": Array [
+                "RoleArn": {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentCodeBuildActionRoleE2A058AD",
                     "Arn",
                   ],
@@ -991,54 +991,54 @@ Object {
             ],
             "Name": "UpdatePipeline",
           },
-          Object {
-            "Actions": Array [
-              Object {
-                "ActionTypeId": Object {
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
                   "Category": "Build",
                   "Owner": "AWS",
                   "Provider": "CodeBuild",
                   "Version": "1",
                 },
-                "Configuration": Object {
-                  "ProjectName": Object {
+                "Configuration": {
+                  "ProjectName": {
                     "Ref": "mijngegevensdevelopmentAssetsFileAsset110399CBF",
                   },
                 },
-                "InputArtifacts": Array [
-                  Object {
+                "InputArtifacts": [
+                  {
                     "Name": "Synth_Output",
                   },
                 ],
                 "Name": "FileAsset1",
-                "RoleArn": Object {
-                  "Fn::GetAtt": Array [
+                "RoleArn": {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentCodeBuildActionRoleE2A058AD",
                     "Arn",
                   ],
                 },
                 "RunOrder": 1,
               },
-              Object {
-                "ActionTypeId": Object {
+              {
+                "ActionTypeId": {
                   "Category": "Build",
                   "Owner": "AWS",
                   "Provider": "CodeBuild",
                   "Version": "1",
                 },
-                "Configuration": Object {
-                  "ProjectName": Object {
+                "Configuration": {
+                  "ProjectName": {
                     "Ref": "mijngegevensdevelopmentAssetsFileAsset26EFE76EE",
                   },
                 },
-                "InputArtifacts": Array [
-                  Object {
+                "InputArtifacts": [
+                  {
                     "Name": "Synth_Output",
                   },
                 ],
                 "Name": "FileAsset2",
-                "RoleArn": Object {
-                  "Fn::GetAtt": Array [
+                "RoleArn": {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentCodeBuildActionRoleE2A058AD",
                     "Arn",
                   ],
@@ -1048,25 +1048,25 @@ Object {
             ],
             "Name": "Assets",
           },
-          Object {
-            "Actions": Array [
-              Object {
-                "ActionTypeId": Object {
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
                   "Category": "Deploy",
                   "Owner": "AWS",
                   "Provider": "CloudFormation",
                   "Version": "1",
                 },
-                "Configuration": Object {
+                "Configuration": {
                   "ActionMode": "CHANGE_SET_REPLACE",
                   "Capabilities": "CAPABILITY_NAMED_IAM,CAPABILITY_AUTO_EXPAND",
                   "ChangeSetName": "PipelineChange",
-                  "RoleArn": Object {
-                    "Fn::Join": Array [
+                  "RoleArn": {
+                    "Fn::Join": [
                       "",
-                      Array [
+                      [
                         "arn:",
-                        Object {
+                        {
                           "Ref": "AWS::Partition",
                         },
                         ":iam::test:role/cdk-hnb659fds-cfn-exec-role-test-eu-west-1",
@@ -1077,18 +1077,18 @@ Object {
                   "TemplateConfiguration": "Synth_Output::assembly-test-mijn-gegevens-parameters/testmijngegevensparametersparams50638DF8.template.json.config.json",
                   "TemplatePath": "Synth_Output::assembly-test-mijn-gegevens-parameters/testmijngegevensparametersparams50638DF8.template.json",
                 },
-                "InputArtifacts": Array [
-                  Object {
+                "InputArtifacts": [
+                  {
                     "Name": "Synth_Output",
                   },
                 ],
                 "Name": "Prepare",
-                "RoleArn": Object {
-                  "Fn::Join": Array [
+                "RoleArn": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:role/cdk-hnb659fds-deploy-role-test-eu-west-1",
@@ -1097,25 +1097,25 @@ Object {
                 },
                 "RunOrder": 1,
               },
-              Object {
-                "ActionTypeId": Object {
+              {
+                "ActionTypeId": {
                   "Category": "Deploy",
                   "Owner": "AWS",
                   "Provider": "CloudFormation",
                   "Version": "1",
                 },
-                "Configuration": Object {
+                "Configuration": {
                   "ActionMode": "CHANGE_SET_EXECUTE",
                   "ChangeSetName": "PipelineChange",
                   "StackName": "mijn-gegevens-parameters-params",
                 },
                 "Name": "Deploy",
-                "RoleArn": Object {
-                  "Fn::Join": Array [
+                "RoleArn": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:role/cdk-hnb659fds-deploy-role-test-eu-west-1",
@@ -1127,25 +1127,25 @@ Object {
             ],
             "Name": "mijn-gegevens-parameters",
           },
-          Object {
-            "Actions": Array [
-              Object {
-                "ActionTypeId": Object {
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
                   "Category": "Deploy",
                   "Owner": "AWS",
                   "Provider": "CloudFormation",
                   "Version": "1",
                 },
-                "Configuration": Object {
+                "Configuration": {
                   "ActionMode": "CHANGE_SET_REPLACE",
                   "Capabilities": "CAPABILITY_NAMED_IAM,CAPABILITY_AUTO_EXPAND",
                   "ChangeSetName": "PipelineChange",
-                  "RoleArn": Object {
-                    "Fn::Join": Array [
+                  "RoleArn": {
+                    "Fn::Join": [
                       "",
-                      Array [
+                      [
                         "arn:",
-                        Object {
+                        {
                           "Ref": "AWS::Partition",
                         },
                         ":iam::test:role/cdk-hnb659fds-cfn-exec-role-test-eu-west-1",
@@ -1155,18 +1155,18 @@ Object {
                   "StackName": "mijn-gegevens-api-persoonsgegevens-api",
                   "TemplatePath": "Synth_Output::assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.template.json",
                 },
-                "InputArtifacts": Array [
-                  Object {
+                "InputArtifacts": [
+                  {
                     "Name": "Synth_Output",
                   },
                 ],
                 "Name": "Prepare",
-                "RoleArn": Object {
-                  "Fn::Join": Array [
+                "RoleArn": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:role/cdk-hnb659fds-deploy-role-test-eu-west-1",
@@ -1175,25 +1175,25 @@ Object {
                 },
                 "RunOrder": 1,
               },
-              Object {
-                "ActionTypeId": Object {
+              {
+                "ActionTypeId": {
                   "Category": "Deploy",
                   "Owner": "AWS",
                   "Provider": "CloudFormation",
                   "Version": "1",
                 },
-                "Configuration": Object {
+                "Configuration": {
                   "ActionMode": "CHANGE_SET_EXECUTE",
                   "ChangeSetName": "PipelineChange",
                   "StackName": "mijn-gegevens-api-persoonsgegevens-api",
                 },
                 "Name": "Deploy",
-                "RoleArn": Object {
-                  "Fn::Join": Array [
+                "RoleArn": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:role/cdk-hnb659fds-deploy-role-test-eu-west-1",
@@ -1206,12 +1206,12 @@ Object {
             "Name": "mijn-gegevens-api",
           },
         ],
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -1219,26 +1219,26 @@ Object {
       },
       "Type": "AWS::CodePipeline::Pipeline",
     },
-    "mijngegevensdevelopmentPipelineRole52822A5B": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "mijngegevensdevelopmentPipelineRole52822A5B": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "codepipeline.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -1246,12 +1246,12 @@ Object {
       },
       "Type": "AWS::IAM::Role",
     },
-    "mijngegevensdevelopmentPipelineRoleDefaultPolicy1ED3B604": Object {
-      "Properties": Object {
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
-              "Action": Array [
+    "mijngegevensdevelopmentPipelineRoleDefaultPolicy1ED3B604": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
                 "s3:GetObject*",
                 "s3:GetBucket*",
                 "s3:List*",
@@ -1264,19 +1264,19 @@ Object {
                 "s3:Abort*",
               ],
               "Effect": "Allow",
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                     "Arn",
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
+                    [
+                      {
+                        "Fn::GetAtt": [
                           "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                           "Arn",
                         ],
@@ -1287,8 +1287,8 @@ Object {
                 },
               ],
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "kms:Decrypt",
                 "kms:DescribeKey",
                 "kms:Encrypt",
@@ -1296,42 +1296,42 @@ Object {
                 "kms:GenerateDataKey*",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
                   "Arn",
                 ],
               },
             },
-            Object {
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentPipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRole8FCFD73F",
                   "Arn",
                 ],
               },
             },
-            Object {
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentCodeBuildActionRoleE2A058AD",
                   "Arn",
                 ],
               },
             },
-            Object {
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::Join": Array [
+              "Resource": {
+                "Fn::Join": [
                   "",
-                  Array [
+                  [
                     "arn:",
-                    Object {
+                    {
                       "Ref": "AWS::Partition",
                     },
                     ":iam::test:role/cdk-hnb659fds-deploy-role-test-eu-west-1",
@@ -1343,28 +1343,28 @@ Object {
           "Version": "2012-10-17",
         },
         "PolicyName": "mijngegevensdevelopmentPipelineRoleDefaultPolicy1ED3B604",
-        "Roles": Array [
-          Object {
+        "Roles": [
+          {
             "Ref": "mijngegevensdevelopmentPipelineRole52822A5B",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
     },
-    "mijngegevensdevelopmentPipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRole8FCFD73F": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "mijngegevensdevelopmentPipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRole8FCFD73F": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
-                "AWS": Object {
-                  "Fn::Join": Array [
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":iam::test:root",
@@ -1376,12 +1376,12 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -1389,19 +1389,19 @@ Object {
       },
       "Type": "AWS::IAM::Role",
     },
-    "mijngegevensdevelopmentPipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRoleDefaultPolicy23D4F6D4": Object {
-      "Properties": Object {
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "mijngegevensdevelopmentPipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRoleDefaultPolicy23D4F6D4": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
               "Action": "codestar-connections:UseConnection",
               "Effect": "Allow",
-              "Resource": Object {
+              "Resource": {
                 "Ref": "connectionArn",
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "s3:GetObject*",
                 "s3:GetBucket*",
                 "s3:List*",
@@ -1414,19 +1414,19 @@ Object {
                 "s3:Abort*",
               ],
               "Effect": "Allow",
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                     "Arn",
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
+                    [
+                      {
+                        "Fn::GetAtt": [
                           "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                           "Arn",
                         ],
@@ -1437,8 +1437,8 @@ Object {
                 },
               ],
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "kms:Decrypt",
                 "kms:DescribeKey",
                 "kms:Encrypt",
@@ -1446,25 +1446,25 @@ Object {
                 "kms:GenerateDataKey*",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
                   "Arn",
                 ],
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "s3:PutObjectAcl",
                 "s3:PutObjectVersionAcl",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::Join": Array [
+              "Resource": {
+                "Fn::Join": [
                   "",
-                  Array [
-                    Object {
-                      "Fn::GetAtt": Array [
+                  [
+                    {
+                      "Fn::GetAtt": [
                         "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                         "Arn",
                       ],
@@ -1478,30 +1478,30 @@ Object {
           "Version": "2012-10-17",
         },
         "PolicyName": "mijngegevensdevelopmentPipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRoleDefaultPolicy23D4F6D4",
-        "Roles": Array [
-          Object {
+        "Roles": [
+          {
             "Ref": "mijngegevensdevelopmentPipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRole8FCFD73F",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
     },
-    "mijngegevensdevelopmentUpdatePipelineSelfMutation4B4A5B8B": Object {
-      "Properties": Object {
-        "Artifacts": Object {
+    "mijngegevensdevelopmentUpdatePipelineSelfMutation4B4A5B8B": {
+      "Properties": {
+        "Artifacts": {
           "Type": "CODEPIPELINE",
         },
-        "Cache": Object {
+        "Cache": {
           "Type": "NO_CACHE",
         },
         "Description": "Pipeline step test/Pipeline/UpdatePipeline/SelfMutate",
-        "EncryptionKey": Object {
-          "Fn::GetAtt": Array [
+        "EncryptionKey": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
             "Arn",
           ],
         },
-        "Environment": Object {
+        "Environment": {
           "ComputeType": "BUILD_GENERAL1_SMALL",
           "Image": "aws/codebuild/standard:6.0",
           "ImagePullCredentialsType": "CODEBUILD",
@@ -1509,36 +1509,36 @@ Object {
           "Type": "LINUX_CONTAINER",
         },
         "Name": "mijngegevens-development-selfupdate",
-        "ServiceRole": Object {
-          "Fn::GetAtt": Array [
+        "ServiceRole": {
+          "Fn::GetAtt": [
             "mijngegevensdevelopmentUpdatePipelineSelfMutationRoleB4FF3056",
             "Arn",
           ],
         },
-        "Source": Object {
+        "Source": {
           "BuildSpec": "{
-  \\"version\\": \\"0.2\\",
-  \\"phases\\": {
-    \\"install\\": {
-      \\"commands\\": [
-        \\"npm install -g aws-cdk@2\\"
+  "version": "0.2",
+  "phases": {
+    "install": {
+      "commands": [
+        "npm install -g aws-cdk@2"
       ]
     },
-    \\"build\\": {
-      \\"commands\\": [
-        \\"cdk -a . deploy test --require-approval=never --verbose\\"
+    "build": {
+      "commands": [
+        "cdk -a . deploy test --require-approval=never --verbose"
       ]
     }
   }
 }",
           "Type": "CODEPIPELINE",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -1546,26 +1546,26 @@ Object {
       },
       "Type": "AWS::CodeBuild::Project",
     },
-    "mijngegevensdevelopmentUpdatePipelineSelfMutationRoleB4FF3056": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "mijngegevensdevelopmentUpdatePipelineSelfMutationRoleB4FF3056": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "codebuild.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "Tags": Array [
-          Object {
+        "Tags": [
+          {
             "Key": "cdkManaged",
             "Value": "yes",
           },
-          Object {
+          {
             "Key": "Project",
             "Value": "mijn-gegevens",
           },
@@ -1573,43 +1573,43 @@ Object {
       },
       "Type": "AWS::IAM::Role",
     },
-    "mijngegevensdevelopmentUpdatePipelineSelfMutationRoleDefaultPolicy663C87BD": Object {
-      "Properties": Object {
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
-              "Action": Array [
+    "mijngegevensdevelopmentUpdatePipelineSelfMutationRoleDefaultPolicy663C87BD": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
                 "logs:CreateLogGroup",
                 "logs:CreateLogStream",
                 "logs:PutLogEvents",
               ],
               "Effect": "Allow",
-              "Resource": Array [
-                Object {
-                  "Fn::Join": Array [
+              "Resource": [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":logs:eu-west-1:test:log-group:/aws/codebuild/",
-                      Object {
+                      {
                         "Ref": "mijngegevensdevelopmentUpdatePipelineSelfMutation4B4A5B8B",
                       },
                     ],
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
+                    [
                       "arn:",
-                      Object {
+                      {
                         "Ref": "AWS::Partition",
                       },
                       ":logs:eu-west-1:test:log-group:/aws/codebuild/",
-                      Object {
+                      {
                         "Ref": "mijngegevensdevelopmentUpdatePipelineSelfMutation4B4A5B8B",
                       },
                       ":*",
@@ -1618,8 +1618,8 @@ Object {
                 },
               ],
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "codebuild:CreateReportGroup",
                 "codebuild:CreateReport",
                 "codebuild:UpdateReport",
@@ -1627,16 +1627,16 @@ Object {
                 "codebuild:BatchPutCodeCoverages",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::Join": Array [
+              "Resource": {
+                "Fn::Join": [
                   "",
-                  Array [
+                  [
                     "arn:",
-                    Object {
+                    {
                       "Ref": "AWS::Partition",
                     },
                     ":codebuild:eu-west-1:test:report-group/",
-                    Object {
+                    {
                       "Ref": "mijngegevensdevelopmentUpdatePipelineSelfMutation4B4A5B8B",
                     },
                     "-*",
@@ -1644,11 +1644,11 @@ Object {
                 ],
               },
             },
-            Object {
+            {
               "Action": "sts:AssumeRole",
-              "Condition": Object {
-                "ForAnyValue:StringEquals": Object {
-                  "iam:ResourceTag/aws-cdk:bootstrap-role": Array [
+              "Condition": {
+                "ForAnyValue:StringEquals": {
+                  "iam:ResourceTag/aws-cdk:bootstrap-role": [
                     "image-publishing",
                     "file-publishing",
                     "deploy",
@@ -1658,36 +1658,36 @@ Object {
               "Effect": "Allow",
               "Resource": "arn:*:iam::test:role/*",
             },
-            Object {
+            {
               "Action": "cloudformation:DescribeStacks",
               "Effect": "Allow",
               "Resource": "*",
             },
-            Object {
+            {
               "Action": "s3:ListBucket",
               "Effect": "Allow",
               "Resource": "*",
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "s3:GetObject*",
                 "s3:GetBucket*",
                 "s3:List*",
               ],
               "Effect": "Allow",
-              "Resource": Array [
-                Object {
-                  "Fn::GetAtt": Array [
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
                     "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                     "Arn",
                   ],
                 },
-                Object {
-                  "Fn::Join": Array [
+                {
+                  "Fn::Join": [
                     "",
-                    Array [
-                      Object {
-                        "Fn::GetAtt": Array [
+                    [
+                      {
+                        "Fn::GetAtt": [
                           "mijngegevensdevelopmentPipelineArtifactsBucketE3E16285",
                           "Arn",
                         ],
@@ -1698,29 +1698,29 @@ Object {
                 },
               ],
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "kms:Decrypt",
                 "kms:DescribeKey",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
                   "Arn",
                 ],
               },
             },
-            Object {
-              "Action": Array [
+            {
+              "Action": [
                 "kms:Decrypt",
                 "kms:Encrypt",
                 "kms:ReEncrypt*",
                 "kms:GenerateDataKey*",
               ],
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
+              "Resource": {
+                "Fn::GetAtt": [
                   "mijngegevensdevelopmentPipelineArtifactsBucketEncryptionKeyB5EF8393",
                   "Arn",
                 ],
@@ -1730,8 +1730,8 @@ Object {
           "Version": "2012-10-17",
         },
         "PolicyName": "mijngegevensdevelopmentUpdatePipelineSelfMutationRoleDefaultPolicy663C87BD",
-        "Roles": Array [
-          Object {
+        "Roles": [
+          {
             "Ref": "mijngegevensdevelopmentUpdatePipelineSelfMutationRoleB4FF3056",
           },
         ],
@@ -1739,22 +1739,22 @@ Object {
       "Type": "AWS::IAM::Policy",
     },
   },
-  "Rules": Object {
-    "CheckBootstrapVersion": Object {
-      "Assertions": Array [
-        Object {
-          "Assert": Object {
-            "Fn::Not": Array [
-              Object {
-                "Fn::Contains": Array [
-                  Array [
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
                     "1",
                     "2",
                     "3",
                     "4",
                     "5",
                   ],
-                  Object {
+                  {
                     "Ref": "BootstrapVersion",
                   },
                 ],
