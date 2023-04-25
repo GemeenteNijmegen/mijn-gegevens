@@ -1,6 +1,14 @@
 {
   "dependencies": [
     {
+      "name": "@glen/jest-raw-loader",
+      "type": "build"
+    },
+    {
+      "name": "@types/aws-lambda",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -22,6 +30,10 @@
     {
       "name": "aws-cdk",
       "version": "^2.41.0",
+      "type": "build"
+    },
+    {
+      "name": "axios-mock-adapter",
       "type": "build"
     },
     {
@@ -51,6 +63,10 @@
     },
     {
       "name": "jest",
+      "type": "build"
+    },
+    {
+      "name": "jest-aws-client-mock",
       "type": "build"
     },
     {
@@ -93,11 +109,35 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-sdk/client-dynamodb",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-sdk/client-secrets-manager",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-solutions-constructs/aws-lambda-dynamodb",
       "type": "runtime"
     },
     {
+      "name": "@gemeentenijmegen/apiclient",
+      "type": "runtime"
+    },
+    {
+      "name": "@gemeentenijmegen/apigateway-http",
+      "type": "runtime"
+    },
+    {
       "name": "@gemeentenijmegen/projen-project-type",
+      "type": "runtime"
+    },
+    {
+      "name": "@gemeentenijmegen/session",
+      "type": "runtime"
+    },
+    {
+      "name": "@gemeentenijmegen/utils",
       "type": "runtime"
     },
     {
@@ -112,6 +152,10 @@
     },
     {
       "name": "dotenv",
+      "type": "runtime"
+    },
+    {
+      "name": "mustache",
       "type": "runtime"
     }
   ],

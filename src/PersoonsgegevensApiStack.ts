@@ -6,6 +6,7 @@ import { ITable, Table } from 'aws-cdk-lib/aws-dynamodb';
 import { Role } from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
 import { ApiFunction } from './ApiFunction';
+import { PersoonsgegevensFunction } from './app/persoonsgegevens/persoonsgegevens-function';
 import { Statics } from './statics';
 
 export class PersoonsgegevensApiStack extends Stack {
@@ -58,6 +59,7 @@ export class PersoonsgegevensApiStack extends Stack {
         BRP_API_URL: SSM.StringParameter.valueForStringParameter(this, Statics.ssmBrpApiEndpointUrl),
       },
       readOnlyRole,
+      apiFunction: PersoonsgegevensFunction,
     });
 
     secretMTLSPrivateKey.grantRead(gegevensFunction.lambda);
