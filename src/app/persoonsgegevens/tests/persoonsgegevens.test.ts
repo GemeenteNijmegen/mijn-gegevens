@@ -25,6 +25,7 @@ beforeAll(() => {
   process.env.CLIENT_SECRET_ARN = '123';
   process.env.OIDC_CLIENT_ID = '1234';
   process.env.OIDC_SCOPE = 'openid';
+  process.env.BRP_API_URL = 'https://localhost/brp';
 
   process.env.MTLS_PRIVATE_KEY_ARN = 'testarn';
 
@@ -68,6 +69,8 @@ beforeEach(() => {
 });
 
 describe('Requests', () => {
+  const apiClient = new ApiClient('', '', '');
+  const dynamoDBClient = new DynamoDBClient({});
   test('Return status 200', async () => {
     const output: GetSecretValueCommandOutput = {
       $metadata: {},
@@ -82,9 +85,8 @@ describe('Requests', () => {
       });
     axiosMock.onPost().reply(200, returnData);
 
-    const client = new ApiClient();
-    const dynamoDBClient = new DynamoDBClient({});
-    const result = await persoonsgegevensRequestHandler('session=12345', client, dynamoDBClient);
+
+    const result = await persoonsgegevensRequestHandler('session=12345', apiClient, dynamoDBClient);
     expect(result.statusCode).toBe(200);
   });
 
@@ -97,9 +99,8 @@ describe('Requests', () => {
     axiosMock.onPost().reply(200, {
     });
 
-    const client = new ApiClient();
-    const dynamoDBClient = new DynamoDBClient({});
-    const result = await persoonsgegevensRequestHandler('session=12345', client, dynamoDBClient);
+
+    const result = await persoonsgegevensRequestHandler('session=12345', apiClient, dynamoDBClient);
     expect(result.statusCode).toBe(200);
   });
 
@@ -111,9 +112,8 @@ describe('Requests', () => {
     secretsMock.mockImplementation(() => output);
     axiosMock.onPost().timeout();
 
-    const client = new ApiClient();
-    const dynamoDBClient = new DynamoDBClient({});
-    const result = await persoonsgegevensRequestHandler('session=12345', client, dynamoDBClient);
+
+    const result = await persoonsgegevensRequestHandler('session=12345', apiClient, dynamoDBClient);
     expect(result.statusCode).toBe(200);
   });
 
@@ -131,9 +131,8 @@ describe('Requests', () => {
         return JSON.parse(data);
       });
     axiosMock.onPost().reply(200, returnData);
-    const client = new ApiClient();
     const dynamoDBClient = new DynamoDBClient({ region: 'eu-west-1' });
-    const result = await persoonsgegevensRequestHandler('session=12345', client, dynamoDBClient);
+    const result = await persoonsgegevensRequestHandler('session=12345', apiClient, dynamoDBClient);
     expect(result.body).toMatch('Mijn gegevens');
   });
 });
