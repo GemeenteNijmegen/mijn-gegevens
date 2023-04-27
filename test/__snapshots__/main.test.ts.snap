@@ -371,23 +371,12 @@ exports[`Snapshot 1`] = `
           "Statement": [
             {
               "Action": "sts:AssumeRole",
-              "Condition": {
-                "Bool": {
-                  "aws:ViaAWSService": "codepipeline.amazonaws.com",
-                },
-              },
               "Effect": "Allow",
               "Principal": {
                 "AWS": {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:",
-                      {
-                        "Ref": "AWS::Partition",
-                      },
-                      ":iam::test:root",
-                    ],
+                  "Fn::GetAtt": [
+                    "mijngegevensdevelopmentPipelineRole52822A5B",
+                    "Arn",
                   ],
                 },
               },
