@@ -3,6 +3,7 @@ import * as Dotenv from 'dotenv';
 import { PipelineStackAcceptance } from './PipelineStackAcceptance';
 import { PipelineStackDevelopment } from './PipelineStackDevelopment';
 import { PipelineStackProduction } from './PipelineStackProduction';
+import { PipelineStack } from './PipelineStack';
 
 // for development, use sandbox account
 const deploymentEnvironment = {
@@ -25,6 +26,21 @@ const productionEnvironment = {
   region: 'eu-west-1',
 };
 
+const gnBuildEnvironment = {
+  account: '836443378780',
+  region: 'eu-central-1',
+};
+
+const gnMijnNijmegenAccpEnvironment = {
+  account: '021929636313',
+  region: 'eu-central-1',
+};
+
+const gnMijnNijmegenProdEnvironment = {
+  account: '740606269759',
+  region: 'eu-central-1',
+};
+
 Dotenv.config();
 const app = new App();
 
@@ -44,12 +60,28 @@ if ('BRANCH_NAME' in process.env == false || process.env.BRANCH_NAME == 'develop
       deployToEnvironment: acceptanceEnvironment,
     },
   );
+} else if (process.env.BRANCH_NAME == 'acceptance-new-lz') {
+  new PipelineStack(app, 'mijn-persoonsgegevens-pipeline-acceptance-new-lz',
+    {
+      env: gnBuildEnvironment,
+      branchName: 'acceptance-new-lz',
+      deployToEnvironment: gnMijnNijmegenAccpEnvironment,
+    },
+  );
 } else if (process.env.BRANCH_NAME == 'production') {
   new PipelineStackProduction(app, 'mijn-persoonsgegevens-pipeline-production',
     {
       env: deploymentEnvironment,
       branchName: 'production',
       deployToEnvironment: productionEnvironment,
+    },
+  );
+} else if (process.env.BRANCH_NAME == 'production-new-lz') {
+  new PipelineStack(app, 'mijn-persoonsgegevens-pipeline-production-new-lz',
+    {
+      env: gnBuildEnvironment,
+      branchName: 'production-new-lz',
+      deployToEnvironment: gnMijnNijmegenProdEnvironment,
     },
   );
 }
