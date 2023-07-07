@@ -1142,6 +1142,7 @@ exports[`Snapshot 1`] = `
                     ],
                   },
                   "StackName": "mijn-gegevens-api-persoonsgegevens-api",
+                  "TemplateConfiguration": "Synth_Output::assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.template.json.config.json",
                   "TemplatePath": "Synth_Output::assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.template.json",
                 },
                 "InputArtifacts": [
