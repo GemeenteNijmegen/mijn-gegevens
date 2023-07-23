@@ -49,7 +49,7 @@
     "jest-aws-client-mock": "^0.0.26",
     "jest-junit": "^15",
     "npm-check-updates": "^16",
-    "projen": "^0.71.146",
+    "projen": "^0.71.147",
     "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.1",
