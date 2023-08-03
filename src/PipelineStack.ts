@@ -36,8 +36,6 @@ export class PipelineStack extends Stack {
     });
     const pipeline = new pipelines.CodePipeline(this, props.configuration.pipelineName, {
       pipelineName: props.configuration.pipelineName,
-      dockerEnabledForSelfMutation: true,
-      dockerEnabledForSynth: true,
       crossAccountKeys: true,
       synth: new pipelines.ShellStep('Synth', {
         input: source,
