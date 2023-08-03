@@ -163,6 +163,8 @@ exports[`Snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
+        "Path": "/",
+        "PermissionsBoundary": "arn:aws:iam::test:policy/landingzone-workload-permissions-boundary",
         "Tags": [
           {
             "Key": "cdkManaged",
@@ -312,6 +314,8 @@ exports[`Snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
+        "Path": "/",
+        "PermissionsBoundary": "arn:aws:iam::test:policy/landingzone-workload-permissions-boundary",
         "Tags": [
           {
             "Key": "cdkManaged",
@@ -1045,6 +1049,8 @@ exports[`Snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
+        "Path": "/",
+        "PermissionsBoundary": "arn:aws:iam::test:policy/landingzone-workload-permissions-boundary",
         "Tags": [
           {
             "Key": "cdkManaged",
@@ -1223,6 +1229,8 @@ exports[`Snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
+        "Path": "/",
+        "PermissionsBoundary": "arn:aws:iam::test:policy/landingzone-workload-permissions-boundary",
         "Tags": [
           {
             "Key": "cdkManaged",
@@ -1366,6 +1374,8 @@ exports[`Snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
+        "Path": "/",
+        "PermissionsBoundary": "arn:aws:iam::test:policy/landingzone-workload-permissions-boundary",
         "Tags": [
           {
             "Key": "cdkManaged",
@@ -1550,6 +1560,8 @@ exports[`Snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
+        "Path": "/",
+        "PermissionsBoundary": "arn:aws:iam::test:policy/landingzone-workload-permissions-boundary",
         "Tags": [
           {
             "Key": "cdkManaged",
