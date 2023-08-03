@@ -1,57 +1,18 @@
 import { App } from 'aws-cdk-lib';
 import * as Dotenv from 'dotenv';
-import { PipelineStackAcceptance } from './PipelineStackAcceptance';
-import { PipelineStackDevelopment } from './PipelineStackDevelopment';
-import { PipelineStackProduction } from './PipelineStackProduction';
-
-// for development, use sandbox account
-const deploymentEnvironment = {
-  account: '418648875085',
-  region: 'eu-west-1',
-};
-
-const sandboxEnvironment = {
-  account: '122467643252',
-  region: 'eu-west-1',
-};
-
-const acceptanceEnvironment = {
-  account: '315037222840',
-  region: 'eu-west-1',
-};
-
-const productionEnvironment = {
-  account: '196212984627',
-  region: 'eu-west-1',
-};
+import { getConfiguration } from './Configuration';
+import { PipelineStack } from './PipelineStack';
 
 Dotenv.config();
 const app = new App();
 
-if ('BRANCH_NAME' in process.env == false || process.env.BRANCH_NAME == 'development') {
-  new PipelineStackDevelopment(app, 'mijn-persoonsgegevens-pipeline-development',
-    {
-      env: deploymentEnvironment,
-      branchName: 'development',
-      deployToEnvironment: sandboxEnvironment,
-    },
-  );
-} else if (process.env.BRANCH_NAME == 'acceptance') {
-  new PipelineStackAcceptance(app, 'mijn-persoonsgegevens-pipeline-acceptance',
-    {
-      env: deploymentEnvironment,
-      branchName: 'acceptance',
-      deployToEnvironment: acceptanceEnvironment,
-    },
-  );
-} else if (process.env.BRANCH_NAME == 'production') {
-  new PipelineStackProduction(app, 'mijn-persoonsgegevens-pipeline-production',
-    {
-      env: deploymentEnvironment,
-      branchName: 'production',
-      deployToEnvironment: productionEnvironment,
-    },
-  );
-}
+const branchToBuild = process.env.BRANCH_NAME ?? 'acceptance';
+console.log(`Branch to build: ${branchToBuild}`);
+const configuration = getConfiguration(branchToBuild);
+
+new PipelineStack(app, configuration.pipelineStackCdkName, {
+  env: configuration.buildEnvironment,
+  configuration: configuration,
+});
 
 app.synth();
