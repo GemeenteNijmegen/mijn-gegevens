@@ -1,12 +1,21 @@
 import { App } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { PipelineStackDevelopment } from '../src/PipelineStackDevelopment';
+import { PipelineStack } from '../src/PipelineStack';
 import { PersoonsgegevensApiStack } from '../src/PersoonsgegevensApiStack';
+import { Configuration } from '../src/Configuration';
 
+const config: Configuration = {
+  branchName: 'development',
+  envIsInNewLandingZone: true,
+  pipelineName: 'pipeline',
+  pipelineStackCdkName: 'pipeline-stack',
+  buildEnvironment: { account: 'test', region: 'eu-west-1' },
+  deploymentEnvironment: { account: 'test', region: 'eu-west-1' },
+}
 
 test('Snapshot', () => {
   const app = new App();
-  const stack = new PipelineStackDevelopment(app, 'test', { env: { account: 'test', region: 'eu-west-1' }, branchName: 'development', deployToEnvironment: { account: 'test', region: 'eu-west-1' } });
+  const stack = new PipelineStack(app, 'test', { env: { account: 'test', region: 'eu-west-1' }, configuration: config });
 
   const template = Template.fromStack(stack);
   expect(template.toJSON()).toMatchSnapshot();

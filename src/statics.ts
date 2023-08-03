@@ -35,32 +35,32 @@ export abstract class Statics {
     account: '418648875085',
     region: 'eu-west-1',
   };
-  
+
   static readonly sandboxEnvironment = {
     account: '122467643252',
     region: 'eu-west-1',
   };
-  
+
   static readonly acceptanceEnvironment = {
     account: '315037222840',
     region: 'eu-west-1',
   };
-  
+
   static readonly productionEnvironment = {
     account: '196212984627',
     region: 'eu-west-1',
   };
-  
+
   static readonly gnBuildEnvironment = {
     account: '836443378780',
     region: 'eu-central-1',
   };
-  
+
   static readonly gnMijnNijmegenAccpEnvironment = {
     account: '021929636313',
     region: 'eu-central-1',
   };
-  
+
   static readonly gnMijnNijmegenProdEnvironment = {
     account: '740606269759',
     region: 'eu-central-1',
