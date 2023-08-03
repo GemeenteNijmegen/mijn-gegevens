@@ -46,6 +46,7 @@ export class PersoonsgegevensApiStack extends Stack {
     const tlsRootCAParam = SSM.StringParameter.fromStringParameterName(this, 'tlsrootca', Statics.ssmMTLSRootCA);
 
     const readOnlyRole = Role.fromRoleArn(this, 'readonly', SSM.StringParameter.valueForStringParameter(this, Statics.ssmReadOnlyRoleArn));
+    const region = Stack.of(this).region;
 
     const gegevensFunction = new ApiFunction(this, 'persoonsgegevens-function', {
       description: 'Persoonsgegevens-lambda voor de Mijn Nijmegen-applicatie.',
@@ -60,6 +61,7 @@ export class PersoonsgegevensApiStack extends Stack {
       },
       readOnlyRole,
       apiFunction: PersoonsgegevensFunction,
+      insightsArnRegion: region,
     });
 
     secretMTLSPrivateKey.grantRead(gegevensFunction.lambda);

@@ -474,7 +474,7 @@ exports[`Snapshot 1`] = `
                   "Version": "1",
                 },
                 "Configuration": {
-                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"e442fcab9e84117604c2162afeb4b582141cdd2849bcab542258ee2cca076bbd"}]",
+                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"1ff56ad2896876ccb60fc5945314898fffbb9672dc77175319fc721bd6a7f69f"}]",
                   "ProjectName": {
                     "Ref": "pipelinePipelineBuildSynthCdkBuildProject4237770A",
                   },
@@ -511,7 +511,7 @@ exports[`Snapshot 1`] = `
                   "Version": "1",
                 },
                 "Configuration": {
-                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"dc4c1bb479e53feb497ad01e46400d237abc6255c8789a774e5ff77e7b67a65e"}]",
+                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"d6266084ed2b1c3918be03a03bdc2776df75e94a6b07c266b6e9db725f76eba2"}]",
                   "ProjectName": {
                     "Ref": "pipelineUpdatePipelineSelfMutation14A96D2F",
                   },
@@ -994,7 +994,7 @@ exports[`Snapshot 1`] = `
           ],
           "Image": "aws/codebuild/standard:6.0",
           "ImagePullCredentialsType": "CODEBUILD",
-          "PrivilegedMode": true,
+          "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
         },
         "ServiceRole": {
@@ -1505,7 +1505,7 @@ exports[`Snapshot 1`] = `
           "ComputeType": "BUILD_GENERAL1_SMALL",
           "Image": "aws/codebuild/standard:6.0",
           "ImagePullCredentialsType": "CODEBUILD",
-          "PrivilegedMode": true,
+          "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
         },
         "Name": "pipeline-selfupdate",
