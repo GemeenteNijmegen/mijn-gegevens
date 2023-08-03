@@ -10,7 +10,7 @@ const branchToBuild = process.env.BRANCH_NAME ?? 'acceptance';
 console.log(`Branch to build: ${branchToBuild}`);
 const configuration = getConfiguration(branchToBuild);
 
-new PipelineStack(app, 'mijn-persoonsgegevens-pipeline-development', {
+new PipelineStack(app, configuration.pipelineStackCdkName, {
   env: configuration.buildEnvironment,
   configuration: configuration,
 });
