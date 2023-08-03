@@ -1,16 +1,13 @@
 import { App } from 'aws-cdk-lib';
 import * as Dotenv from 'dotenv';
 import { PipelineStack } from './PipelineStack';
-import { PipelineStackAcceptance } from './PipelineStackAcceptance';
-import { PipelineStackDevelopment } from './PipelineStackDevelopment';
-import { PipelineStackProduction } from './PipelineStackProduction';
 import { Statics } from './statics';
 
 Dotenv.config();
 const app = new App();
 
 if ('BRANCH_NAME' in process.env == false || process.env.BRANCH_NAME == 'development') {
-  new PipelineStackDevelopment(app, 'mijn-persoonsgegevens-pipeline-development',
+  new PipelineStack(app, 'mijn-persoonsgegevens-pipeline-development',
     {
       env: Statics.deploymentEnvironment,
       branchName: 'development',
@@ -18,7 +15,7 @@ if ('BRANCH_NAME' in process.env == false || process.env.BRANCH_NAME == 'develop
     },
   );
 } else if (process.env.BRANCH_NAME == 'acceptance') {
-  new PipelineStackAcceptance(app, 'mijn-persoonsgegevens-pipeline-acceptance',
+  new PipelineStack(app, 'mijn-persoonsgegevens-pipeline-acceptance',
     {
       env: Statics.deploymentEnvironment,
       branchName: 'acceptance',
@@ -34,7 +31,7 @@ if ('BRANCH_NAME' in process.env == false || process.env.BRANCH_NAME == 'develop
     },
   );
 } else if (process.env.BRANCH_NAME == 'production') {
-  new PipelineStackProduction(app, 'mijn-persoonsgegevens-pipeline-production',
+  new PipelineStack(app, 'mijn-persoonsgegevens-pipeline-production',
     {
       env: Statics.deploymentEnvironment,
       branchName: 'production',
