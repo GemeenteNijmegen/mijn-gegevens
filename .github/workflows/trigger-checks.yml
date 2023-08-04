@@ -10,15 +10,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.ref_name }}
       - name: Set git identity
         run: |-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
       - name: Push changes
         env:
-          PULL_REQUEST_REF: ${{ github.event.pull_request.head.ref }}
+          BRANCH_REF: ${{ github.ref_name }}
         run: |-
           git commit --allow-empty -m "chore: trigger checks"
-          git push origin HEAD:$PULL_REQUEST_REF
+          git push origin HEAD:$BRANCH_REF
