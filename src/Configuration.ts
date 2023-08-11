@@ -21,22 +21,22 @@ export interface Configuration {
 const configurations: { [key: string]: Configuration } = {
   'acceptance': {
     branchName: 'acceptance',
-    buildEnvironment: Statics.deploymentEnvironment,
-    deploymentEnvironment: Statics.acceptanceEnvironment,
-    envIsInNewLandingZone: false,
+    buildEnvironment: Statics.gnBuildEnvironment,
+    deploymentEnvironment: Statics.gnMijnNijmegenAccpEnvironment,
+    envIsInNewLandingZone: true,
     pipelineName: 'mijngegevens-acceptance',
     pipelineStackCdkName: 'mijn-persoonsgegevens-pipeline-acceptance',
   },
   'production': {
     branchName: 'production',
-    buildEnvironment: Statics.deploymentEnvironment,
-    deploymentEnvironment: Statics.productionEnvironment,
-    envIsInNewLandingZone: false,
+    buildEnvironment: Statics.gnBuildEnvironment,
+    deploymentEnvironment: Statics.gnMijnNijmegenProdEnvironment,
+    envIsInNewLandingZone: true,
     pipelineName: 'mijngegevens-production',
     pipelineStackCdkName: 'mijn-persoonsgegevens-pipeline-production',
   },
   'acceptance-new-lz': {
-    branchName: 'acceptance-new-lz',
+    branchName: 'acceptance',
     buildEnvironment: Statics.gnBuildEnvironment,
     deploymentEnvironment: Statics.gnMijnNijmegenAccpEnvironment,
     envIsInNewLandingZone: true,
@@ -44,7 +44,7 @@ const configurations: { [key: string]: Configuration } = {
     pipelineStackCdkName: 'mijn-persoonsgegevens-pipeline-acceptance',
   },
   'production-new-lz': {
-    branchName: 'production-new-lz',
+    branchName: 'production',
     buildEnvironment: Statics.gnBuildEnvironment,
     deploymentEnvironment: Statics.gnMijnNijmegenProdEnvironment,
     envIsInNewLandingZone: true,
