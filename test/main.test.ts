@@ -6,7 +6,6 @@ import { Configuration } from '../src/Configuration';
 
 const config: Configuration = {
   branchName: 'development',
-  envIsInNewLandingZone: true,
   pipelineName: 'pipeline',
   pipelineStackCdkName: 'pipeline-stack',
   buildEnvironment: { account: 'test', region: 'eu-west-1' },
