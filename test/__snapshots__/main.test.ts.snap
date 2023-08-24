@@ -30,7 +30,7 @@ exports[`Snapshot 1`] = `
         },
         "Environment": {
           "ComputeType": "BUILD_GENERAL1_SMALL",
-          "Image": "aws/codebuild/standard:6.0",
+          "Image": "aws/codebuild/standard:7.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
@@ -89,7 +89,7 @@ exports[`Snapshot 1`] = `
         },
         "Environment": {
           "ComputeType": "BUILD_GENERAL1_SMALL",
-          "Image": "aws/codebuild/standard:6.0",
+          "Image": "aws/codebuild/standard:7.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
@@ -474,7 +474,7 @@ exports[`Snapshot 1`] = `
                   "Version": "1",
                 },
                 "Configuration": {
-                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"1ff56ad2896876ccb60fc5945314898fffbb9672dc77175319fc721bd6a7f69f"}]",
+                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"e6fa49bfd3155292d8b60a41770655ee333c099681e3ee6daab4ccfc7dc0cb47"}]",
                   "ProjectName": {
                     "Ref": "pipelinePipelineBuildSynthCdkBuildProject4237770A",
                   },
@@ -511,7 +511,7 @@ exports[`Snapshot 1`] = `
                   "Version": "1",
                 },
                 "Configuration": {
-                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"d6266084ed2b1c3918be03a03bdc2776df75e94a6b07c266b6e9db725f76eba2"}]",
+                  "EnvironmentVariables": "[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"8895ced889816d1a38712c7f171247c8b68666afaaf49141937f605223285d79"}]",
                   "ProjectName": {
                     "Ref": "pipelineUpdatePipelineSelfMutation14A96D2F",
                   },
@@ -992,7 +992,7 @@ exports[`Snapshot 1`] = `
               "Value": "development",
             },
           ],
-          "Image": "aws/codebuild/standard:6.0",
+          "Image": "aws/codebuild/standard:7.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
@@ -1503,7 +1503,7 @@ exports[`Snapshot 1`] = `
         },
         "Environment": {
           "ComputeType": "BUILD_GENERAL1_SMALL",
-          "Image": "aws/codebuild/standard:6.0",
+          "Image": "aws/codebuild/standard:7.0",
           "ImagePullCredentialsType": "CODEBUILD",
           "PrivilegedMode": false,
           "Type": "LINUX_CONTAINER",
