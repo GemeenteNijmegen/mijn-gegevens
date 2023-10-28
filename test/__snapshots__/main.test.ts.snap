@@ -447,15 +447,15 @@ exports[`Snapshot 1`] = `
                   },
                   "FullRepositoryId": "GemeenteNijmegen/mijn-gegevens",
                 },
-                "Name": "GemeenteNijmegen_mijn-gegevens-development",
+                "Name": "GemeenteNijmegen_mijn-gegevens",
                 "OutputArtifacts": [
                   {
-                    "Name": "GemeenteNijmegen_mijn_gegevens_development_Source",
+                    "Name": "GemeenteNijmegen_mijn_gegevens_Source",
                   },
                 ],
                 "RoleArn": {
                   "Fn::GetAtt": [
-                    "pipelinePipelineSourceGemeenteNijmegenmijngegevensdevelopmentCodePipelineActionRole6792F363",
+                    "pipelinePipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRole1F75836E",
                     "Arn",
                   ],
                 },
@@ -481,7 +481,7 @@ exports[`Snapshot 1`] = `
                 },
                 "InputArtifacts": [
                   {
-                    "Name": "GemeenteNijmegen_mijn_gegevens_development_Source",
+                    "Name": "GemeenteNijmegen_mijn_gegevens_Source",
                   },
                 ],
                 "Name": "Synth",
@@ -1306,7 +1306,7 @@ exports[`Snapshot 1`] = `
               "Effect": "Allow",
               "Resource": {
                 "Fn::GetAtt": [
-                  "pipelinePipelineSourceGemeenteNijmegenmijngegevensdevelopmentCodePipelineActionRole6792F363",
+                  "pipelinePipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRole1F75836E",
                   "Arn",
                 ],
               },
@@ -1349,7 +1349,7 @@ exports[`Snapshot 1`] = `
       },
       "Type": "AWS::IAM::Policy",
     },
-    "pipelinePipelineSourceGemeenteNijmegenmijngegevensdevelopmentCodePipelineActionRole6792F363": {
+    "pipelinePipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRole1F75836E": {
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -1389,7 +1389,7 @@ exports[`Snapshot 1`] = `
       },
       "Type": "AWS::IAM::Role",
     },
-    "pipelinePipelineSourceGemeenteNijmegenmijngegevensdevelopmentCodePipelineActionRoleDefaultPolicyFB79BA37": {
+    "pipelinePipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRoleDefaultPolicy350D55F7": {
       "Properties": {
         "PolicyDocument": {
           "Statement": [
@@ -1477,10 +1477,10 @@ exports[`Snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "pipelinePipelineSourceGemeenteNijmegenmijngegevensdevelopmentCodePipelineActionRoleDefaultPolicyFB79BA37",
+        "PolicyName": "pipelinePipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRoleDefaultPolicy350D55F7",
         "Roles": [
           {
-            "Ref": "pipelinePipelineSourceGemeenteNijmegenmijngegevensdevelopmentCodePipelineActionRole6792F363",
+            "Ref": "pipelinePipelineSourceGemeenteNijmegenmijngegevensCodePipelineActionRole1F75836E",
           },
         ],
       },
