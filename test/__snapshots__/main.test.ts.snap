@@ -52,7 +52,7 @@ exports[`Snapshot 1`] = `
     },
     "build": {
       "commands": [
-        "cdk-assets --path \\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\" --verbose publish \\"a4a350e8ff361a11815184f10220bfe4a9cb642940db17e48d7e8aa9dfd8c837:test-eu-west-1\\""
+        "cdk-assets --path \\"assembly-test-mijn-gegevens-api/testmijngegevensapipersoonsgegevensapi9BDC5B79.assets.json\\" --verbose publish \\"5530d77f0bd869e63cd3b0c696c65e17cd94ca70236a72e33b0b764398facbc4:test-eu-west-1\\""
       ]
     }
   }
