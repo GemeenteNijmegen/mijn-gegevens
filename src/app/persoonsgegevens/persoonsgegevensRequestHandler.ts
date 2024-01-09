@@ -5,39 +5,66 @@ import { Response } from '@gemeentenijmegen/apigateway-http/lib/V2/Response';
 import { Session } from '@gemeentenijmegen/session';
 import { BrpApi } from './BrpApi';
 import * as template from './templates/persoonsgegevens.mustache';
+import { MdiFileMultiple } from '../../shared/Icons';
+import { nav } from '../../shared/nav';
 import { render } from '../../shared/render';
 
-export async function persoonsgegevensRequestHandler(cookies: string, apiClient: ApiClient, dynamoDBClient: DynamoDBClient) {
-  console.time('request');
-  console.timeLog('request', 'start request');
-  console.timeLog('request', 'finished init');
-  let session = new Session(cookies, dynamoDBClient);
-  await session.init();
-  console.timeLog('request', 'init session');
-  if (session.isLoggedIn() == true) {
-    // Get API data
-    const response = await handleLoggedinRequest(session, apiClient);
-    console.timeEnd('request');
-    return response;
-  }
-  console.timeEnd('request');
-  return Response.redirect('/login');
+interface Config {
+  apiClient: ApiClient;
+  dynamoDBClient: DynamoDBClient;
+  showZaken?: boolean; // show the 'Mijn Zaken' menu
 }
 
-async function handleLoggedinRequest(session: Session, apiClient: ApiClient) {
-  console.timeLog('request', 'Api Client init');
-  const bsn = session.getValue('bsn');
-  const brpApi = new BrpApi(apiClient);
-  console.timeLog('request', 'Brp Api');
+export class PersoonsgegevensRequestHandler {
+  private config: Config;
+  constructor(config: Config) {
+    this.config = config;
+    const zakenNav = {
+      url: '/zaken',
+      title: 'Zaken',
+      description: 'Bekijk de status van uw zaken en aanvragen.',
+      label: 'Bekijk zaken',
+      icon: MdiFileMultiple.default,
+    };
+    if (config?.showZaken) {
+      nav.push(zakenNav);
+    }
+  }
 
-  const brpData = await brpApi.getBrpData(bsn);
-  const data = brpData;
-  data.volledigenaam = session.getValue('username');
+  async handleRequest(cookies: string) {
+    console.time('request');
+    console.timeLog('request', 'start request');
+    console.timeLog('request', 'finished init');
+    let session = new Session(cookies, this.config.dynamoDBClient);
+    await session.init();
+    console.timeLog('request', 'init session');
+    if (session.isLoggedIn() == true) {
+      // Get API data
+      const response = await this.handleLoggedinRequest(session);
+      console.timeEnd('request');
+      return response;
+    }
+    console.timeEnd('request');
+    return Response.redirect('/login');
+  }
 
-  data.title = 'Persoonsgegevens';
-  data.shownav = true;
-  // render page
-  const html = await render(data, template.default);
-  return Response.html(html, 200, session.getCookie());
+  private async handleLoggedinRequest(session: Session) {
+    console.timeLog('request', 'Api Client init');
+    const bsn = session.getValue('bsn');
+    const brpApi = new BrpApi(this.config.apiClient);
+    console.timeLog('request', 'Brp Api');
+
+    const brpData = await brpApi.getBrpData(bsn);
+    const data = brpData;
+    data.volledigenaam = session.getValue('username');
+
+    data.title = 'Persoonsgegevens';
+    data.shownav = true;
+    data.nav = nav;
+    // render page
+    const html = await render(data, template.default);
+    return Response.html(html, 200, session.getCookie());
+  }
+
 }
 
