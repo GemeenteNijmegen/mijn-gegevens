@@ -7,7 +7,7 @@ import { ApiClient } from '@gemeentenijmegen/apiclient';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { mockClient } from 'jest-aws-client-mock';
-import { persoonsgegevensRequestHandler } from '../persoonsgegevensRequestHandler';
+import { PersoonsgegevensRequestHandler } from '../persoonsgegevensRequestHandler';
 
 
 if (process.env.VERBOSETESTS!='True') {
@@ -51,6 +51,7 @@ const secretsMock = mockClient(SecretsManagerClient);
 const axiosMock = new MockAdapter(axios);
 const parameterStoreMock = mockClient(SSMClient);
 
+
 beforeEach(() => {
   ddbMock.mockReset();
   secretsMock.mockReset();
@@ -68,9 +69,12 @@ beforeEach(() => {
   ddbMock.mockImplementation(() => getItemOutput);
 });
 
+const apiClient = new ApiClient('', '', '');
+const dynamoDBClient = new DynamoDBClient({});
+const showZaken = true;
+const handler = new PersoonsgegevensRequestHandler({ apiClient, dynamoDBClient, showZaken });
+
 describe('Requests', () => {
-  const apiClient = new ApiClient('', '', '');
-  const dynamoDBClient = new DynamoDBClient({});
   test('Return status 200', async () => {
     const output: GetSecretValueCommandOutput = {
       $metadata: {},
@@ -85,8 +89,7 @@ describe('Requests', () => {
       });
     axiosMock.onPost().reply(200, returnData);
 
-
-    const result = await persoonsgegevensRequestHandler('session=12345', apiClient, dynamoDBClient);
+    const result = await handler.handleRequest('session=12345');
     expect(result.statusCode).toBe(200);
   });
 
@@ -99,8 +102,7 @@ describe('Requests', () => {
     axiosMock.onPost().reply(200, {
     });
 
-
-    const result = await persoonsgegevensRequestHandler('session=12345', apiClient, dynamoDBClient);
+    const result = await handler.handleRequest('session=12345');
     expect(result.statusCode).toBe(200);
   });
 
@@ -112,8 +114,7 @@ describe('Requests', () => {
     secretsMock.mockImplementation(() => output);
     axiosMock.onPost().timeout();
 
-
-    const result = await persoonsgegevensRequestHandler('session=12345', apiClient, dynamoDBClient);
+    const result = await handler.handleRequest('session=12345');
     expect(result.statusCode).toBe(200);
   });
 
@@ -131,7 +132,7 @@ describe('Requests', () => {
         return JSON.parse(data);
       });
     axiosMock.onPost().reply(200, returnData);
-    const result = await persoonsgegevensRequestHandler('session=12345', apiClient, dynamoDBClient);
+    const result = await handler.handleRequest('session=12345');
     expect(result.body).toMatch('Mijn gegevens');
   });
 });
@@ -139,10 +140,8 @@ describe('Requests', () => {
 
 describe('Unexpected requests', () => {
   test('No cookies set should redirect to login page', async() => {
-    const client = new ApiClient('test', 'test', 'test');
-    const dynamoDBClient = new DynamoDBClient({ region: 'eu-west-1' });
 
-    const result = await persoonsgegevensRequestHandler('', client, dynamoDBClient);
+    const result = await handler.handleRequest('');
     expect(result.statusCode).toBe(302);
     expect(result.headers?.Location).toMatch('/login');
   });
