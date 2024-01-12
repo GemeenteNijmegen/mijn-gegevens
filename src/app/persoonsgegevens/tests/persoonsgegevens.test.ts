@@ -67,7 +67,7 @@ beforeEach(() => {
         M: {
           loggedin: { BOOL: true },
           identifier: { S: '900026236' },
-          user_type: {S : 'person' },
+          user_type: { S: 'person' },
         },
       },
     },
@@ -129,17 +129,17 @@ describe('Requests', () => {
           M: {
             loggedin: { BOOL: true },
             identifier: { S: '12345678' },
-            user_type: { S: 'organisation '},
+            user_type: { S: 'organisation ' },
           },
         },
       },
     };
     ddbMock.mockImplementation(() => getItemOutput);
-    
+
     const result = await handler.handleRequest('session=12345');
     expect(result.statusCode).toBe(302);
   });
-  
+
 });
 
 
