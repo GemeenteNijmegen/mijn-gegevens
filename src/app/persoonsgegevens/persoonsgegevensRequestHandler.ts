@@ -50,7 +50,14 @@ export class PersoonsgegevensRequestHandler {
 
   private async handleLoggedinRequest(session: Session) {
     console.timeLog('request', 'Api Client init');
-    const bsn = session.getValue('bsn');
+
+    const userType = session.getValue('user_type');
+    // Companies can log in, but can't use this page.
+    if (userType != 'person') {
+      return Response.redirect('/');
+    }
+    const bsn = session.getValue('identifier');
+
     const brpApi = new BrpApi(this.config.apiClient);
     console.timeLog('request', 'Brp Api');
 
