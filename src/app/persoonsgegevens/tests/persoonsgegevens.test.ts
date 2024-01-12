@@ -55,13 +55,19 @@ const parameterStoreMock = mockClient(SSMClient);
 beforeEach(() => {
   ddbMock.mockReset();
   secretsMock.mockReset();
+  const output: GetSecretValueCommandOutput = {
+    $metadata: {},
+    SecretString: 'ditiseennepgeheim',
+  };
+  secretsMock.mockImplementation(() => output);
   axiosMock.reset();
   const getItemOutput: Partial<GetItemCommandOutput> = {
     Item: {
       data: {
         M: {
           loggedin: { BOOL: true },
-          bsn: { S: '999993653' },
+          identifier: { S: '900026236' },
+          user_type: {S : 'person' },
         },
       },
     },
@@ -76,11 +82,6 @@ const handler = new PersoonsgegevensRequestHandler({ apiClient, dynamoDBClient, 
 
 describe('Requests', () => {
   test('Return status 200', async () => {
-    const output: GetSecretValueCommandOutput = {
-      $metadata: {},
-      SecretString: 'ditiseennepgeheim',
-    };
-    secretsMock.mockImplementation(() => output);
     const file = 'brp-999993653.json';
     const filePath = path.join('responses', file);
     const returnData = await getStringFromFilePath(filePath)
@@ -94,11 +95,6 @@ describe('Requests', () => {
   });
 
   test('Return error page', async () => {
-    const output: GetSecretValueCommandOutput = {
-      $metadata: {},
-      SecretString: 'ditiseennepgeheim',
-    };
-    secretsMock.mockImplementation(() => output);
     axiosMock.onPost().reply(200, {
     });
 
@@ -107,11 +103,6 @@ describe('Requests', () => {
   });
 
   test('Return error page on timeout', async () => {
-    const output: GetSecretValueCommandOutput = {
-      $metadata: {},
-      SecretString: 'ditiseennepgeheim',
-    };
-    secretsMock.mockImplementation(() => output);
     axiosMock.onPost().timeout();
 
     const result = await handler.handleRequest('session=12345');
@@ -120,11 +111,6 @@ describe('Requests', () => {
 
 
   test('Show overview page', async () => {
-    const output: GetSecretValueCommandOutput = {
-      $metadata: {},
-      SecretString: 'ditiseennepgeheim',
-    };
-    secretsMock.mockImplementation(() => output);
     const file = 'brp-999993653.json';
     const filePath = path.join('responses', file);
     const returnData = await getStringFromFilePath(filePath)
@@ -135,6 +121,25 @@ describe('Requests', () => {
     const result = await handler.handleRequest('session=12345');
     expect(result.body).toMatch('Mijn gegevens');
   });
+
+  test('Companies get redirected', async () => {
+    const getItemOutput: Partial<GetItemCommandOutput> = {
+      Item: {
+        data: {
+          M: {
+            loggedin: { BOOL: true },
+            identifier: { S: '12345678' },
+            user_type: { S: 'organisation '},
+          },
+        },
+      },
+    };
+    ddbMock.mockImplementation(() => getItemOutput);
+    
+    const result = await handler.handleRequest('session=12345');
+    expect(result.statusCode).toBe(302);
+  });
+  
 });
 
 
