@@ -5,8 +5,7 @@ import { Response } from '@gemeentenijmegen/apigateway-http/lib/V2/Response';
 import { Session } from '@gemeentenijmegen/session';
 import { BrpApi } from './BrpApi';
 import * as template from './templates/persoonsgegevens.mustache';
-import { MdiFileMultiple } from '../../shared/Icons';
-import { nav } from '../../shared/nav';
+import { Navigation } from '../../shared/Navigation';
 import { render } from '../../shared/render';
 
 interface Config {
@@ -19,16 +18,6 @@ export class PersoonsgegevensRequestHandler {
   private config: Config;
   constructor(config: Config) {
     this.config = config;
-    const zakenNav = {
-      url: '/zaken',
-      title: 'Zaken',
-      description: 'Bekijk de status van uw zaken en aanvragen.',
-      label: 'Bekijk zaken',
-      icon: MdiFileMultiple.default,
-    };
-    if (config?.showZaken) {
-      nav.push(zakenNav);
-    }
   }
 
   async handleRequest(cookies: string) {
@@ -63,11 +52,13 @@ export class PersoonsgegevensRequestHandler {
 
     const brpData = await brpApi.getBrpData(bsn);
     const data = brpData;
+
+    const navigation = new Navigation(userType, { showZaken: this.config.showZaken, currentPath: '/persoonsgegevens' });
     data.volledigenaam = session.getValue('username');
 
     data.title = 'Persoonsgegevens';
     data.shownav = true;
-    data.nav = nav;
+    data.nav = navigation.items;
     // render page
     const html = await render(data, template.default);
     return Response.html(html, 200, session.getCookie());
