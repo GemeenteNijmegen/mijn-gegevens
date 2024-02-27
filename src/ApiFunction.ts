@@ -39,6 +39,7 @@ export class ApiFunction extends Construct {
       logRetention: RetentionDays.ONE_MONTH,
       environment: {
         SESSION_TABLE: props.table.tableName,
+        SHOW_ZAKEN: 'True',
         ...props.environment,
       },
     });
